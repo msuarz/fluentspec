@@ -25,7 +25,7 @@ namespace FluentSpec.Test.Acceptance {
         [TestMethod]
         public void When_Method_Should_GuardedMethod_If_Given_ConditionalMethod() {
 
-            Subject.Given().ConditionalMethod().WillReturn(true);
+            Subject.Given().BoolProperty = true;
             Subject.Method();
             Subject.Should().GuardedMethod();
         }

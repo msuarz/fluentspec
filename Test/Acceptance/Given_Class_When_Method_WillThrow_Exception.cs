@@ -21,8 +21,8 @@ namespace FluentSpec.Test.Acceptance {
 
         [TestMethod]
         public void Given_ConditionalMethod_WillThrow_Exception() {
-            
-            Given.ConditionalMethod().WillThrow(ExpectedException);
+
+            Given.BoolProperty.WillThrow(ExpectedException);
 
             AssertWhenMethodThrowsExpectedException();
         }
@@ -40,7 +40,16 @@ namespace FluentSpec.Test.Acceptance {
 
             Given.ExpectedException.WillReturn(ExpectedException);
             When.Method();
-            Should.GuardedMethod();
+            Should.GuardedMethodForException();
+        }
+        
+        [TestMethod]
+        public void Without_ExpectedException_ShouldNot_GuardedMethod() {
+            const Exception NullException = null;
+
+            Given.ExpectedException.WillReturn(NullException);
+            When.Method();
+            ShouldNot.GuardedMethodForException();
         }
     }
 }

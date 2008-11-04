@@ -51,20 +51,52 @@ namespace FluentSpec.Test.Acceptance {
 
         [TestMethod]
         public void When_Method_Should_GuardedMethod_If_Given_ConditionalMethod() {
-            Given.ConditionalMethod().WillReturn(true);
+            Given.BoolProperty.WillReturn(true);
+            When.Method();
+            Should.GuardedMethod();
+        }
+        
+        [TestMethod]
+        public void When_Method_Should_GuardedMethod() {
+
+            Given.BoolProperty = false;
+            When.Method();
+            ShouldNot.GuardedMethod();
+            
+            Given.BoolProperty = true;
             When.Method();
             Should.GuardedMethod();
         }
 
         [TestMethod]
-        public void When_ConditionalMethod_If_Given_ConditionalProperty() {
-            Given.ConditionalProperty = true;
-            Assert.IsTrue(When.ConditionalMethod());
+        public void When_ConditionalMethod_If_Given_VirtualProperty() {
+            var ExpectedValue = new object();
+
+            Given.VirtualProperty = ExpectedValue;
+            Assert.AreSame(ExpectedValue, Actual.GetProperty());
+        }
+
+        [TestMethod]
+        public void When_SetProperty_Will_TrowException() {
+            var ExpectedValue = new object();
+            var ExpectedException = new Exception();
+
+            Given.VirtualProperty = ExpectedValue; 
+            WillThrow(ExpectedException);
+
+            try {
+                When.SetProperty(ExpectedValue);
+                Assert.Fail(Helper.ShouldHaveThrownException);
+            } catch (Exception ActualException) {
+                Assert.AreSame(ExpectedException, ActualException);
+            }
+            
         }
 
         [TestMethod]
         public void When_UnexpectedResult_Should_return_default_value() {
-            Assert.IsFalse(When.ConditionalMethod());
+            
+            Assert.IsNotNull(When.GetProperty());
         }
     }
 }

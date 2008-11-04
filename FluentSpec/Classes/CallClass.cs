@@ -8,21 +8,28 @@ namespace FluentSpec.Classes {
         public Comparer Comparer { get; set; }
 
         readonly MethodInfo MethodInfo;
-        public virtual string Method { get { return MethodInfo.Name; } }
+        public virtual string Method { get; private set; }
         public virtual Type ReturnType { get { return MethodInfo.ReturnType; } }
-        public virtual object[] Args { get; private set; }
+
+        object[] args;
+        public virtual object[] Args {
+            get { return args; }
+            private set { args = value; }
+        }
 
         public CallClass(){}
 
         public CallClass(MethodInfo MethodInfo, params object[] Args) {
             this.MethodInfo = MethodInfo;
+            Method =  MethodInfo.Name;
             this.Args = Args;
         }
 
         object result;
+        bool hasResult;
         public virtual object Result {
-            get { return result ?? Default; } 
-            set { result = value; }
+            get { return hasResult ? result : Default; }
+            set { hasResult = true; result = value; }
         }
 
         public virtual object Default { get { 
@@ -32,9 +39,36 @@ namespace FluentSpec.Classes {
 
         public bool ShouldThrowException { get; private set; }
         public void WillThrow(Exception Exception) {
+            if (WasSetter) SwitchToSetter();
             ShouldThrowException = true;
             Result = Exception;
         }
+
+        public void WillBeExpected() {
+            if (IsSetter) SwitchToGetter();
+        }
+
+        public virtual void SwitchToSetter() {
+            Method = "set_" + Method.Remove(0, 4);
+            Array.Resize(ref args, Args.Length + 1);
+            Args[Args.Length - 1] = Result;
+        }
+
+        public virtual void SwitchToGetter() {
+            Method = "get_" + Method.Remove(0, 4);
+            Result = Args[Args.Length - 1];
+            Array.Resize(ref args, Args.Length - 1);
+        }
+
+        public virtual bool IsSetter { get { return 
+            MethodInfo.IsSpecialName
+            && MethodInfo.Name.StartsWith("set_")
+        ;}}
+
+        public virtual bool WasSetter { get { return
+            IsSetter && Method != MethodInfo.Name
+        ;}}
+
         public Exception Exception { get { return Result as Exception; } }
 
         public bool ShouldIgnoreArgs;

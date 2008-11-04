@@ -15,9 +15,15 @@ namespace FluentSpec.Classes {
             ActualCalls.Exists(Call => Call.Equals(ExpectedCall))        
         ;}
 
-        public void Expect(Call Call) {
-            ExpectedCalls.Add(Call);
+        public void Expect(Call ActualCall) {
+            var index = IndexOf(ActualCall);
+            if (index == -1) ExpectedCalls.Add(ActualCall);
+            else ExpectedCalls[index] = ActualCall;
         }
+
+        int IndexOf(Call ActualCall) { return 
+            ExpectedCalls.FindIndex(Call => Call.Equals(ActualCall))
+        ;}
 
         public virtual Call Expected(Call ActualCall) { return
             ExpectedCalls.Find(Call => Call.Equals(ActualCall))

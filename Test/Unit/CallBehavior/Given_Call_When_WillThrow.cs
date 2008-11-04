@@ -9,21 +9,26 @@ namespace FluentSpec.Test.Unit.CallBehavior {
 
         readonly Exception ExpectedException = new Exception();
 
-        [TestInitialize]
-        public void Setup() {
-            When.WillThrow(ExpectedException);
-        }
-
         [TestMethod]
         public void Setup_ShouldThrowException() {
 
+            When.WillThrow(ExpectedException);
             Assert.IsTrue(That.ShouldThrowException);
         }
 
         [TestMethod]
         public void Should_Setup_Result() {
-            
+
+            When.WillThrow(ExpectedException);
             Should.Result = ExpectedException;
+        }
+        
+        [TestMethod]
+        public void Should_SwitchToSetter_If_WasSetter() {
+
+            Given.WasSetter.WillReturn(true);
+            When.WillThrow(ExpectedException);
+            Should.SwitchToSetter();           
         }
     }
 }

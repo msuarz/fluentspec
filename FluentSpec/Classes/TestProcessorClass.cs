@@ -41,6 +41,7 @@ namespace FluentSpec.Classes {
         }}
 
         public void Expect() {
+            Call.WillBeExpected();
             Log.Expect(Call);
             CallBuilder.ActiveCall = Call;
         }
