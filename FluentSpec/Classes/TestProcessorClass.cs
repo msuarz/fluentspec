@@ -49,6 +49,7 @@ namespace FluentSpec.Classes {
         public bool ExpectSubjectAction { get { return Execute == Record; } }
 
         public object When { get { 
+            CallBuilder.ActiveCall = null;
             Execute = Record;
             return this;
         }}
@@ -66,11 +67,13 @@ namespace FluentSpec.Classes {
         }
 
         public object Should { get {
+            CallBuilder.ActiveCall = null;
             Execute = VerifyCalled;
             return this;
         }}
 
         public object ShouldNot { get {
+            CallBuilder.ActiveCall = null;
             Execute = VerifyDidNotCall;
             return this;
         }}

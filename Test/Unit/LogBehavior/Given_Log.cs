@@ -17,14 +17,5 @@ namespace FluentSpec.Test.Unit.LogBehavior {
             Assert.IsTrue(That.Recorded(Call));
             Assert.IsFalse(That.Recorded(AnotherCall));
         }
-        
-        [TestMethod]
-        public void Should_Expect() {
-
-            When.Expect(Call);
-
-            Assert.AreSame(Call, Actual.Expected(Call));
-            Assert.IsNull(When.Expected(AnotherCall));
-        }
     }
 }

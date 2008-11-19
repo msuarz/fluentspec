@@ -49,6 +49,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="IInterface.cs" />
     <Compile Include="LogBehavior\Given_Log.cs" />
+    <Compile Include="LogBehavior\Given_Log_When_Expect_Call.cs" />
     <Compile Include="TestObjectInterceptorBehavior\Given_ClassInterceptor.cs" />
     <Compile Include="TestObjectInterceptorBehavior\Given_ClassInterceptor_When_Intercept.cs" />
     <Compile Include="TestObjectInterceptorBehavior\Given_InterfaceInterceptor_When_Intercept.cs" />

@@ -8,13 +8,18 @@ namespace FluentSpec.Classes {
         public Comparer Comparer { get; set; }
 
         readonly MethodInfo MethodInfo;
-        public virtual string Method { get; private set; }
         public virtual Type ReturnType { get { return MethodInfo.ReturnType; } }
 
-        object[] args;
-        public virtual object[] Args {
+        string method = string.Empty;
+        public string Method {
+            get { return method; }
+            set { method = value; }
+        }
+
+        object[] args = new object[0];
+        public object[] Args {
             get { return args; }
-            private set { args = value; }
+            set { args = value; }
         }
 
         public CallClass(){}

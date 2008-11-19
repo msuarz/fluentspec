@@ -14,23 +14,23 @@ namespace FluentSpec.Test.Unit.CallBehavior {
         readonly object[] AnotherArgs = new object[0];
 
         private void GivenSameMethods() {
-            Given.Method.WillReturn(Method);
-            Another.Given().Method.WillReturn(Method);
+            Given.Method = Method;
+            Another.Method = Method;
         }
 
         private void GivenDifferentMethods() {
-            Given.Method.WillReturn(Method);
-            Another.Given().Method.WillReturn(AnotherMethod);
+            Given.Method = Method;
+            Another.Method = AnotherMethod;
         }
         
         private void GivenSameArgs() {
-            Given.Args.WillReturn(Args);
-            Another.Given().Args.WillReturn(Args);
+            Given.Args = Args;
+            Another.Args = Args;
         }
 
         private void GivenDifferentArgs() {
-            Given.Args.WillReturn(Args);
-            Another.Given().Args.WillReturn(AnotherArgs);
+            Given.Args = Args;
+            Another.Args = AnotherArgs;
         }
 
         [TestMethod]
@@ -45,7 +45,6 @@ namespace FluentSpec.Test.Unit.CallBehavior {
         [TestMethod]
         public void When_not_Equals_Another_based_on_Method() {
             
-            GivenDifferentMethods();
             Assert.IsFalse(That.Equals(Another));
         }
         
@@ -110,14 +109,14 @@ namespace FluentSpec.Test.Unit.CallBehavior {
         [TestMethod]
         public void When_Default_is_not_null() {
 
-            Given.ReturnType.WillReturn(typeof(object));            
+            Given.ReturnType.Is(typeof(object));            
             Assert.IsNotNull(Actual.Default);
         }
         
         [TestMethod]
         public void When_Default_is_null() {
 
-            Given.ReturnType.WillReturn(typeof(void));
+            Given.ReturnType.Is(typeof(void));
             Assert.IsNull(Actual.Default);
         }
         
@@ -132,6 +131,9 @@ namespace FluentSpec.Test.Unit.CallBehavior {
 
         [TestMethod]
         public void When_GetHashCode_Should_Equal_If_Properties_Are_Null() {
+
+            Given.Method = Another.Method = null;
+            Given.Args = Another.Args = null;
 
             Assert.IsTrue(That.GetHashCode() == Another.GetHashCode());
         }

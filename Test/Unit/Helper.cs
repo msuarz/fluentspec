@@ -7,7 +7,7 @@ namespace FluentSpec.Test.Unit {
         
         public static string ShouldHaveThrownException =
             "Should have thrown exception ...";
-        
+
         public object FunctionSample() { return null; }
         
         public static MethodInfo Function { get { return 
@@ -38,6 +38,14 @@ namespace FluentSpec.Test.Unit {
         
         public static PropertyInfo NonTesteableProperty { get { return
             typeof(Helper).GetProperty("ReadOnlyProperty")
+        ;}}
+
+        public static string DidNotCall { get { return 
+            TestProcessorClass.DidNotCall
+        ;}}
+
+        public static string ShouldNotCall { get { return 
+            TestProcessorClass.ShouldNotCall
         ;}}
 
         public static bool WillDoWhenExecute(object TestProcessor, string Method) { return

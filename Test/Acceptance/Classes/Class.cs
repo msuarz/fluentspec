@@ -3,41 +3,38 @@ namespace FluentSpec.Test.Acceptance.Classes {
 
     public class Class {
 
+        public Dependency Dependency { get; set; }
+
         public void Method() {
+
             VirtualMethod();
+            Dependency.Method();
 
-            if (BoolProperty)
-                GuardedMethod();
+            if (GuardCondition) GuardedMethod();
 
-            if (ExpectedException != null)
-                GuardedMethodForException();
+            VirtualProperty = Dependency.Property = true;
         }
+
+        bool GuardCondition { get { return 
+            GuardProperty 
+            || GuardFunction() 
+            || Dependency.GuardProperty 
+            || Dependency.GuardFunction()
+        ;}}
 
         public virtual void VirtualMethod() {
-            NestedVirtualMethod();
+            AnotherVirtualMethod();
         }
 
-        public virtual void NestedVirtualMethod() {
+        public virtual void AnotherVirtualMethod() {
             throw new NotImplementedException();
-        }
-
-        public virtual object GetProperty() { return 
-            VirtualProperty;
-        }
-
-        public virtual void SetProperty(object Value) { 
-            VirtualProperty = Value;
         }
 
         public virtual void GuardedMethod() {
             throw new NotImplementedException();
         }
 
-        public virtual void GuardedMethodForException() {
-            throw new NotImplementedException();
-        }
-
-        public virtual bool BoolProperty {
+        public virtual bool GuardProperty {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
@@ -47,11 +44,31 @@ namespace FluentSpec.Test.Acceptance.Classes {
             set { throw new NotImplementedException(); }
         }
 
-        public virtual object this[string name, int index] {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+        public virtual bool GuardFunction() {
+            throw new NotImplementedException();
         }
-        
-        public virtual Exception ExpectedException { get; set; }
+
+        #region dependency injection
+
+        public Dependency AbstractDependency { get; set; }
+        public Dependency SetAbstractDependency { set; private get; }
+        public Class ConcreteDependency { get; set; }
+        public Class SetConcreteDependency { set; private get; }
+
+        public void TestDependency() {
+
+            if (AbstractDependency != null) AbstractDependency.Method();
+            if (SetAbstractDependency != null) SetAbstractDependency.Method();
+
+            if (ConcreteDependency != null) ConcreteDependency.VirtualMethod();
+            if (SetConcreteDependency != null) SetConcreteDependency.VirtualMethod();
+        }
+
+        public void TestDependency(Dependency Dependency) {
+            Dependency.Method();
+        }
+
+        #endregion
+
     }
 }

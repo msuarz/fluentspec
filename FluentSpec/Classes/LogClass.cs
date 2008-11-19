@@ -21,7 +21,7 @@ namespace FluentSpec.Classes {
             else ExpectedCalls[index] = ActualCall;
         }
 
-        int IndexOf(Call ActualCall) { return 
+        public virtual int IndexOf(Call ActualCall) { return 
             ExpectedCalls.FindIndex(Call => Call.Equals(ActualCall))
         ;}
 

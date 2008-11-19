@@ -2,7 +2,6 @@ namespace FluentSpec.Test.Acceptance.Classes {
 
     public class ClassWithDependency : Class {
 
-        public Dependency Dependency { get; set; }
         public Dependency DependencyField;
 
         public Dependency ReturnUnexpectedInterface { get { return GetDependency; } }

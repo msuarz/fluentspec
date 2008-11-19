@@ -11,7 +11,7 @@ namespace FluentSpec {
         object Result { get; set; }
         bool ShouldThrowException { get; }
         Exception Exception { get; }
-        
+
         void IgnoreArgs();
         void WillThrow(Exception Exception);
         void WillBeExpected();

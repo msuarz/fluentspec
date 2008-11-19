@@ -8,8 +8,8 @@ namespace FluentSpec {
 
         private TestProcessor TestSubject { get { return (TestProcessor) Subject; } }
 
-        protected static T TestObjectFor<T>() {
-            return Create.TestObjectFor<T>()
+        protected static T TestObjectFor<T>() { return 
+            Create.TestObjectFor<T>()
         ;}
 
         protected SubjectClass Given { get { return
@@ -28,6 +28,7 @@ namespace FluentSpec {
             (SubjectClass) TestSubject.ShouldNot
         ;}}
 
+        protected SubjectClass Then { get { return Should; } }
         protected SubjectClass Expected { get { return Subject; } }
         protected SubjectClass Actual { get { return Subject; } }
         protected SubjectClass That { get { return When; } }

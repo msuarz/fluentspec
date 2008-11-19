@@ -11,6 +11,14 @@ namespace FluentSpec {
             ActiveCall = null;
         }
 
+        public static void Is<T>(this object obj, T Result) {
+            WillReturn(obj, Result);
+        }
+
+        public static void Are<T>(this object obj, T Result) {
+            WillReturn(obj, Result);
+        }
+
         public static void WillThrow<E>(this object obj, E Exception) 
             where E : Exception {
             ActiveCall.WillThrow(Exception);
@@ -24,5 +32,6 @@ namespace FluentSpec {
         }
         
         private static bool UnexpectedCall { get { return ActiveCall == null; } }
+
     }
 }
