@@ -8,8 +8,10 @@ namespace FluentSpec.Test.Unit.TestObjectFactoryBehavior {
 
         [TestMethod]
         public void When_ShouldTestProperty() {
-        
+
             Given.Property = Helper.TesteableProperty;
+            Given.HasNotSetProperty.Is(true);
+
             Assert.IsTrue(That.ShouldTestProperty);
         }
 

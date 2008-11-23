@@ -1,5 +1,6 @@
+using System;
+
 namespace FluentSpec.Test.Acceptance.Classes {
-    using System;
 
     public class Class {
 
@@ -15,12 +16,7 @@ namespace FluentSpec.Test.Acceptance.Classes {
             VirtualProperty = Dependency.Property = true;
         }
 
-        bool GuardCondition { get { return 
-            GuardProperty 
-            || GuardFunction() 
-            || Dependency.GuardProperty 
-            || Dependency.GuardFunction()
-        ;}}
+        #region virtual methods
 
         public virtual void VirtualMethod() {
             AnotherVirtualMethod();
@@ -29,6 +25,21 @@ namespace FluentSpec.Test.Acceptance.Classes {
         public virtual void AnotherVirtualMethod() {
             throw new NotImplementedException();
         }
+
+        public virtual object VirtualProperty {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        #endregion
+        #region guarded methods
+
+        bool GuardCondition { get { return
+            GuardProperty
+            || GuardFunction()
+            || Dependency.GuardProperty
+            || Dependency.GuardFunction()
+        ;}}
 
         public virtual void GuardedMethod() {
             throw new NotImplementedException();
@@ -39,16 +50,38 @@ namespace FluentSpec.Test.Acceptance.Classes {
             set { throw new NotImplementedException(); }
         }
 
-        public virtual object VirtualProperty {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
-        }
-
         public virtual bool GuardFunction() {
             throw new NotImplementedException();
         }
 
+        #endregion
+        #region methods with args
+
+        public void MethodWithArgs(params object[] Args) {
+            ForwardToMethodWithArgs(Args);
+            Dependency.MethodWithArgs(Args);
+        }
+
+        public virtual void ForwardToMethodWithArgs(params object[] Args) {
+            throw new NotImplementedException();
+        }
+
+        public bool AreValid(params object[] Args) {
+            return ValidationForArgs(Args);
+        }
+
+        public virtual bool ValidationForArgs(params object[] args) {
+            throw new NotImplementedException();
+        }
+
+        #endregion
         #region dependency injection
+
+        public Class() { }
+
+        public Class(Dependency Dependency) {
+            AbstractDependency = Dependency;
+        }
 
         public Dependency AbstractDependency { get; set; }
         public Dependency SetAbstractDependency { set; private get; }
@@ -69,6 +102,5 @@ namespace FluentSpec.Test.Acceptance.Classes {
         }
 
         #endregion
-
     }
 }

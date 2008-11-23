@@ -46,35 +46,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\ClassWithArgs.cs" />
     <Compile Include="Classes\Dependency.cs" />
-    <Compile Include="Classes\DependencyWithDependency.cs" />
     <Compile Include="Classes\Class.cs" />
-    <Compile Include="Classes\ClassWithDependency.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_inject_dependencies.cs" />
     <Compile Include="Classic\WithExtensions\How_to_setup_exceptions_on_dependency_calls.cs" />
     <Compile Include="Classic\WithExtensions\How_to_setup_exceptions_within_the_class.cs" />
     <Compile Include="Classic\WithExtensions\How_to_setup_return_values_on_dependency_calls.cs" />
     <Compile Include="Classic\WithExtensions\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_use_args.cs" />
     <Compile Include="Classic\WithExtensions\How_to_verify_calls_made_in_a_virtual_method.cs" />
     <Compile Include="Classic\WithExtensions\How_to_verify_calls_within_the_class.cs" />
     <Compile Include="Classic\WithExtensions\How_to_verify_dependency_calls.cs" />
+    <Compile Include="Classic\WithStatics\How_to_inject_dependencies.cs" />
     <Compile Include="Classic\WithStatics\How_to_setup_exceptions_on_dependency_calls.cs" />
     <Compile Include="Classic\WithStatics\How_to_setup_exceptions_within_the_class.cs" />
     <Compile Include="Classic\WithStatics\How_to_setup_return_values_on_dependency_calls.cs" />
     <Compile Include="Classic\WithStatics\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Classic\WithStatics\How_to_use_args.cs" />
     <Compile Include="Classic\WithStatics\How_to_verify_calls_made_in_a_virtual_method.cs" />
     <Compile Include="Classic\WithStatics\How_to_verify_calls_within_the_class.cs" />
     <Compile Include="Classic\WithStatics\How_to_verify_dependency_calls.cs" />
+    <Compile Include="EdgeCases\What_if_a_dependency_has_a_dependency.cs" />
+    <Compile Include="EdgeCases\What_if_the_SUT_is_an_interface.cs" />
     <Compile Include="Fluent\How_to_inject_dependencies.cs" />
+    <Compile Include="Fluent\How_to_use_args.cs" />
     <Compile Include="Fluent\How_to_verify_dependency_calls.cs" />
     <Compile Include="Fluent\How_to_setup_exceptions_on_dependency_calls.cs" />
     <Compile Include="Fluent\How_to_setup_return_values_on_dependency_calls.cs" />
     <Compile Include="Fluent\How_to_setup_exceptions_within_the_class.cs" />
     <Compile Include="Fluent\How_to_verify_calls_within_the_class.cs" />
     <Compile Include="Fluent\How_to_verify_calls_made_in_a_virtual_method.cs" />
-    <Compile Include="Given_ClassWithArgs.cs" />
-    <Compile Include="Given_Interface.cs" />
-    <Compile Include="Given_Interface_With_Dependency.cs" />
     <Compile Include="Fluent\How_to_setup_return_values_within_the_class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

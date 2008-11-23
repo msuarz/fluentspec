@@ -1,26 +1,26 @@
 using FluentSpec.Test.Acceptance.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FluentSpec.Test.Acceptance {
+namespace FluentSpec.Test.Acceptance.EdgeCases {
 
     /// <summary>
     /// This scenario points to a Demeter violation smell
-    /// it is tested to prove it would work
-    /// should not require extra framework code
+    /// therefore, it did not require extra framework code
     /// </summary>
     [TestClass]
-    public class Given_Interface_With_Dependency : BehaviorOf<DependencyWithDependency> {
+    public class What_if_a_dependency_has_a_dependency : BehaviorOf<Dependency> { 
         
         [TestMethod]
-        public void Actual_Dependency_is_null() {
+        public void the_dependency_would_not_be_set_automatically() {
+
             Assert.IsNull(Actual.Dependency);
         }
 
         [TestMethod]
-        public void Given_Dependency_Actual_Dependency() {
+        public void the_dependency_would_work_if_it_is_explicitly_set() {
             var ExpectedDependency = TestObjectFor<Dependency>();
-            
-            Given.Dependency.WillReturn(ExpectedDependency);
+
+            Given.Dependency.Is(ExpectedDependency);
             Assert.AreSame(ExpectedDependency, Actual.Dependency);
         }
     }

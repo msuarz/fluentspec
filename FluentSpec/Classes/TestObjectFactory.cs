@@ -73,8 +73,18 @@ namespace FluentSpec.Classes {
         }
 
         public virtual bool ShouldTestProperty { get { return
-            Property.PropertyType.IsInterface
+            IsAbstractProperty
             && Property.CanWrite
+            && HasNotSetProperty
+        ;}}
+
+        bool IsAbstractProperty { get { return
+            Property.PropertyType.IsAbstract
+            || Property.PropertyType.IsInterface
+        ;}}
+
+        public virtual bool HasNotSetProperty { get { return
+            Property.GetValue(Object, null) == null
         ;}}
     }
 }
