@@ -1,0 +1,30 @@
+!|FluentSpec.Test.Acceptance.Natural.HowToSetUpReturnValuesWithinTheClass|
+
+!* '''Feature:''' ''Setup return values within the class''
+In order to increase the SUT isolation
+As a developer
+I want to setup return values within the class
+
+*!
+
+!*> '''Scenario:''' ''Return default value''
+
+|Given guard clause is not set|
+|When executing a method that might call a guarded method|
+|Then the guarded method should not be called|
+
+*!
+!*> '''Scenario:''' ''Using the property setter''
+
+|Given guard property is set to |true|
+|When executing a method that might call a guarded method|
+|Then the guarded method should be called|
+
+*!
+!*> '''Scenario:''' ''Using property !-WillReturn-! value''
+
+|Given guard property will return |true|
+|When executing a method that might call a guarded method|
+|Then the guarded method should be called|
+
+*!

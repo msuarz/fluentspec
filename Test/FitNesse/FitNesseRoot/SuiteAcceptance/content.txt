@@ -1,0 +1,7 @@
+!*> define
+!define COMMAND_PATTERN {%m %p}
+!define TEST_RUNNER {dotnet\FitServer.exe}
+!path ..\Acceptance\bin\Debug\FluentSpec.Test.Acceptance.dll
+*!
+
+!contents -R2 -g -p -f -h

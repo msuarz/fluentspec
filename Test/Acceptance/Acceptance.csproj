@@ -39,6 +39,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
+    <Reference Include="fit, Version=1.8.3183.38421, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FitNesse\dotnet\fit.dll</HintPath>
+    </Reference>
+    <Reference Include="FitLibrary, Version=1.4.3183.38422, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FitNesse\dotnet\FitLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -77,6 +85,7 @@
     <Compile Include="Fluent\How_to_verify_calls_within_the_class.cs" />
     <Compile Include="Fluent\How_to_verify_calls_made_in_a_virtual_method.cs" />
     <Compile Include="Fluent\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Natural\HowToSetUpReturnValuesWithinTheClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
