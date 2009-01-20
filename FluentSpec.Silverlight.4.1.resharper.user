@@ -1,0 +1,84 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer>
+      <setting name="UsedSolutionBuilderID">0</setting>
+    </integer>
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:Then.cs" caret="0" scrollPosition="0|3" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="248" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestObjectFactory.cs" caret="2480" scrollPosition="0|34" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classes/f:Class.cs" caret="2485" scrollPosition="0|3" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:TestObjectInterceptor.cs" caret="612" scrollPosition="0|6" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestProcessorClass.cs" caret="2431" scrollPosition="0|65" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_setup_exceptions_within_the_class.cs" caret="156" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="160" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/f:Helper.cs" caret="430" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="176" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="117" scrollPosition="0|36" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:TestObjectInterceptor.cs" caret="1883" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classes/f:Class.cs" caret="2485" scrollPosition="0|3" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="160" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="176" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="173" scrollPosition="0|0" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="System" priority="0" />
+      <Item value="Linq" priority="0" />
+      <Item value="Expressions" priority="0" />
+      <Item value="var" priority="0" />
+      <Item value="ExpectedCalls" priority="3" />
+      <Item value="Call" priority="5" />
+      <Item value="ActualCall" priority="5" />
+      <Item value="if" priority="0" />
+      <Item value="from" priority="1" />
+      <Item value="where" priority="0" />
+      <Item value="select" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Contains" priority="1" />
+      <Item value="Select" priority="2" />
+      <Item value="IndexOf" priority="0" />
+      <Item value="Where" priority="0" />
+      <Item value="Remove" priority="0" />
+      <Item value="All" priority="0" />
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="First" priority="0" />
+      <Item value="ToList" priority="2" />
+      <Item value="All" priority="0" />
+      <Item value="Select" priority="0" />
+      <Item value="AsEnumerable" priority="0" />
+      <Item value="FirstOrDefault" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentSpec.Call">
+      <Item value="Equals" priority="2" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
