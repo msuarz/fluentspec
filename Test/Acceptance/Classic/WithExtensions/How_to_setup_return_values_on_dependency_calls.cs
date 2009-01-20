@@ -10,12 +10,12 @@ namespace FluentSpec.Test.Acceptance.Classic.WithExtensions {
 
         void a_guarded_method_should_not_be_called() {
             Subject.Method();
-            Subject.ShouldNot().GuardedMethod();
+            Subject.ShouldNot().DoGuardedMethod();
         }
 
         void a_guarded_method_should_be_called() {
             Subject.Method();
-            Subject.Should().GuardedMethod();
+            Subject.Should().DoGuardedMethod();
         }
 
         [TestMethod]

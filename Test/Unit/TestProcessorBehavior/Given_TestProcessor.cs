@@ -39,8 +39,9 @@ namespace FluentSpec.Test.Unit.TestProcessorBehavior {
         
         [TestMethod]
         public void When_Should_Should_Execute_VerifyCalled() {
-            Assert.IsTrue(Helper.WillDoWhenExecute(Actual.Should, "VerifyCalled"))
-        ;}
+            
+            Assert.IsTrue(Helper.WillDoWhenExecute(Actual.Should, "VerifyCalled"));
+        }
         
         [TestMethod]
         public void When_ShouldNot_Should_Execute_VerifyDidNotCall() {

@@ -4,7 +4,8 @@ namespace FluentSpec {
 
     public class BehaviorOf<SubjectClass> {
 
-        private readonly SubjectClass Subject = TestObjectFor<SubjectClass>();
+        private SubjectClass Subject = TestObjectFor<SubjectClass>();
+        public virtual void Setup() { Subject = TestObjectFor<SubjectClass>(); }
 
         private TestProcessor TestSubject { get { return (TestProcessor) Subject; } }
 

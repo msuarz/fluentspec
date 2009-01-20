@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using Castle.Core.Interceptor;
 
 namespace FluentSpec {
 
-    public abstract class TestObjectInterceptor : MarshalByRefObject, IInterceptor {
+    public abstract class TestObjectInterceptor : IInterceptor {
 
         public TestProcessor Processor { get; set; }
         public Log Log { get; set; }

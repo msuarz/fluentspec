@@ -8,12 +8,12 @@ namespace FluentSpec.Test.Acceptance.Fluent {
 
         void a_guarded_method_should_not_be_called() {
             When.Method();
-            ShouldNot.GuardedMethod();
+            ShouldNot.DoGuardedMethod();
         }
 
         void a_guarded_method_should_be_called() {
             When.Method();
-            Should.GuardedMethod();
+            Should.DoGuardedMethod();
         }
 
         [TestMethod]

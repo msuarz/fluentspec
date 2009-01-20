@@ -15,5 +15,7 @@ namespace FluentSpec {
         void IgnoreArgs();
         void WillThrow(Exception Exception);
         void WillBeExpected();
+
+        bool Equals(object obj);
     }
 }

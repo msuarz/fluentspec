@@ -1,3 +1,4 @@
+
 namespace FluentSpec {
 
     public static class BehaviorExtensions {

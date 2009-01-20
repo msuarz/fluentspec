@@ -64,7 +64,8 @@ namespace FluentSpec.Classes {
 
         public void CreateProperty(PropertyInfo Property) { 
             this.Property = Property;
-            if (ShouldTestProperty) SetupDependencyProperty();
+            try { if (ShouldTestProperty) SetupDependencyProperty(); }
+            catch { /* no biggie really */ }
         }
 
         public virtual void SetupDependencyProperty() {
@@ -75,6 +76,7 @@ namespace FluentSpec.Classes {
         public virtual bool ShouldTestProperty { get { return
             IsAbstractProperty
             && Property.CanWrite
+            && Property.CanRead
             && HasNotSetProperty
         ;}}
 

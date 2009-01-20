@@ -1,0 +1,15 @@
+!* Feature: Play to Win
+As a player
+I want to identify a winning move
+So I can win the game
+*!
+
+!*> Scenario: Select the winning move
+
+|Given a !-TicTacToe-! board|
+|where X could win on cell |A3|
+|When is X turn to play|
+|Then X should select |A3|
+|and should win the game|
+
+*!

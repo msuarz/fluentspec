@@ -5,38 +5,33 @@ namespace FluentSpec.Test.Acceptance.Natural {
 
     public class HowToSetUpReturnValuesWithinTheClass : DoFixture {
 
-        Class Subject; 
+        Class Class; 
 
-        public void GivenGuardClauseIsNotSet() {
-            Subject = Create.TestObjectFor<Class>();
+        public void GivenAClass() {
+            Class = Create.TestObjectFor<Class>();            
         }
 
-        public void GivenGuardPropertyIsSetTo(bool value) {
-            Subject = Create.TestObjectFor<Class>();
-            Given.That(Subject).GuardProperty = value;
+        public void WithAnUnsetGuardClause() { }
+
+        public void WithAGuardPropertySetTo(bool Value) {
+            Given.That(Class).GuardProperty = Value;
         }
 
-        public void GivenGuardPropertyWillReturn(bool value) {
-            Subject = Create.TestObjectFor<Class>();
-            Given.That(Subject).GuardProperty.WillReturn(true);
+        public void WithAGuardPropertyThatWillReturn(bool Value) {
+            Given.That(Class).GuardProperty.WillReturn(Value);
         }
 
         public void WhenExecutingAMethodThatMightCallAGuardedMethod() {
-            Subject.Method();
+            Class.Method();
         }
 
         public bool ThenTheGuardedMethodShouldNotBeCalled() {
-            try {
-                Then.ShouldNot(Subject).GuardedMethod();
-                return true;
-            } catch { return false; }
+            return Verified.That(() => Class.ShouldNot().DoGuardedMethod());
         }
 
         public bool ThenTheGuardedMethodShouldBeCalled() {
-            try {
-                Then.Should(Subject).GuardedMethod();
-                return true;
-            } catch { return false; }
+            return Verified.That(() => Class.Should().DoGuardedMethod());
         }
+
     }
 }

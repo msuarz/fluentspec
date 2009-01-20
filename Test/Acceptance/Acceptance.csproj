@@ -54,6 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Unit\Helper.cs">
+      <Link>Helper.cs</Link>
+    </Compile>
+    <Compile Include="..\Unit\IInterface.cs">
+      <Link>IInterface.cs</Link>
+    </Compile>
     <Compile Include="Classes\Dependency.cs" />
     <Compile Include="Classes\Class.cs" />
     <Compile Include="Classic\WithExtensions\How_to_inject_dependencies.cs" />
@@ -85,6 +91,7 @@
     <Compile Include="Fluent\How_to_verify_calls_within_the_class.cs" />
     <Compile Include="Fluent\How_to_verify_calls_made_in_a_virtual_method.cs" />
     <Compile Include="Fluent\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Natural\Verified.cs" />
     <Compile Include="Natural\HowToSetUpReturnValuesWithinTheClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,10 +99,6 @@
     <ProjectReference Include="..\..\FluentSpec\FluentSpec.csproj">
       <Project>{4235DF77-AC2E-4F84-9B41-C47C01098DC0}</Project>
       <Name>FluentSpec</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Unit\Unit.csproj">
-      <Project>{90050499-8EE7-4AF2-B18A-59738E6ECF13}</Project>
-      <Name>Unit</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

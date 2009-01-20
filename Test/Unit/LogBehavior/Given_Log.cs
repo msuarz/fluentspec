@@ -11,6 +11,7 @@ namespace FluentSpec.Test.Unit.LogBehavior {
         
         [TestMethod]
         public void Should_Record() {
+            Call.Given().Equals(Call).Is(true);
             
             When.Record(Call);
 

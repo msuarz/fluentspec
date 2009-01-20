@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSpec.Silverlight", "FluentSpec.Silverlight\FluentSpec.Silverlight.csproj", "{13A112A8-CBA7-47B3-BC0E-BF147988C32E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4890B82E-39AF-4471-8A7D-2ABB294A359A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceptance.Silverlight", "Test\Acceptance.Silverlight\Acceptance.Silverlight.csproj", "{D960EC10-5EF4-4C40-947E-C92EEA66BF69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit.Silverlight", "Test\Unit.Silverlight\Unit.Silverlight.csproj", "{AB1B088E-445D-4F11-8E0A-76A6F6B02CF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13A112A8-CBA7-47B3-BC0E-BF147988C32E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A112A8-CBA7-47B3-BC0E-BF147988C32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A112A8-CBA7-47B3-BC0E-BF147988C32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A112A8-CBA7-47B3-BC0E-BF147988C32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D960EC10-5EF4-4C40-947E-C92EEA66BF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D960EC10-5EF4-4C40-947E-C92EEA66BF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D960EC10-5EF4-4C40-947E-C92EEA66BF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D960EC10-5EF4-4C40-947E-C92EEA66BF69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1B088E-445D-4F11-8E0A-76A6F6B02CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1B088E-445D-4F11-8E0A-76A6F6B02CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1B088E-445D-4F11-8E0A-76A6F6B02CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1B088E-445D-4F11-8E0A-76A6F6B02CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D960EC10-5EF4-4C40-947E-C92EEA66BF69} = {4890B82E-39AF-4471-8A7D-2ABB294A359A}
+		{AB1B088E-445D-4F11-8E0A-76A6F6B02CF1} = {4890B82E-39AF-4471-8A7D-2ABB294A359A}
+	EndGlobalSection
+EndGlobal

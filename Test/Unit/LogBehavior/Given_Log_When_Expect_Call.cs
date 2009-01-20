@@ -7,17 +7,16 @@ namespace FluentSpec.Test.Unit.LogBehavior {
     public class Given_Log_When_Expect_Call : BehaviorOf<LogClass> {
 
         readonly Call Call = TestObjectFor<Call>();
-        readonly Call AnotherCall = TestObjectFor<Call>();
 
         [TestInitialize]
         public void Setup() {
-
-            Given.IndexOf(Call).Is(-1);
+            Call.Given().Equals(Call).Is(true);
             When.Expect(Call);
         }
 
         [TestMethod]
         public void Should_Expect_Call() {
+            var AnotherCall = TestObjectFor<Call>();
 
             Assert.AreSame(Call, Actual.Expected(Call));
             Assert.IsNull(That.Expected(AnotherCall));
@@ -25,11 +24,11 @@ namespace FluentSpec.Test.Unit.LogBehavior {
 
         [TestMethod]
         public void Should_overwrite_Call_Given_another_has_same_index() {
+            var SameCall = TestObjectFor<Call>();
 
-            Given.IndexOf(AnotherCall).Is(Actual.IndexOf(Call));
-            When.Expect(AnotherCall);
+            Call.Given().Equals(SameCall).Is(true);
+            When.Expect(SameCall);
 
-            Assert.AreSame(AnotherCall, Actual.Expected(AnotherCall));
             Assert.IsNull(That.Expected(Call));
         }
     }

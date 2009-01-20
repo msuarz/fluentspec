@@ -11,7 +11,7 @@ namespace FluentSpec.Test.Acceptance.Classes {
             VirtualMethod();
             Dependency.Method();
 
-            if (GuardCondition) GuardedMethod();
+            if (GuardCondition) DoGuardedMethod();
 
             VirtualProperty = Dependency.Property = true;
         }
@@ -41,7 +41,7 @@ namespace FluentSpec.Test.Acceptance.Classes {
             || Dependency.GuardFunction()
         ;}}
 
-        public virtual void GuardedMethod() {
+        public virtual void DoGuardedMethod() {
             throw new NotImplementedException();
         }
 
