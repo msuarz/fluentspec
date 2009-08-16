@@ -12,7 +12,7 @@ namespace FluentSpec.Test.Unit.TestObjectFactoryBehavior {
         private TestObjectFactory ActualTestObject;
 
         [TestInitialize]
-        public void Setup() {
+        public void SetUp() {
             
             Given.TestObject.WillReturn(ExpectedTestObject);
             Given.TestProcessor.WillReturn(ExpectedProcessor);

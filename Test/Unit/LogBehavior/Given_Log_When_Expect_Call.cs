@@ -9,7 +9,7 @@ namespace FluentSpec.Test.Unit.LogBehavior {
         readonly Call Call = TestObjectFor<Call>();
 
         [TestInitialize]
-        public void Setup() {
+        public void SetUp() {
             Call.Given().Equals(Call).Is(true);
             When.Expect(Call);
         }

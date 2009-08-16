@@ -14,28 +14,61 @@
   <RecentFiles>
     <RecentFiles>
       <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:Then.cs" caret="0" scrollPosition="0|3" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="248" scrollPosition="0|0" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestObjectFactory.cs" caret="2480" scrollPosition="0|34" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classes/f:Class.cs" caret="2485" scrollPosition="0|3" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:TestObjectInterceptor.cs" caret="612" scrollPosition="0|6" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestProcessorClass.cs" caret="2431" scrollPosition="0|65" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_setup_exceptions_within_the_class.cs" caret="156" scrollPosition="0|0" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="160" scrollPosition="0|0" />
       <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/f:Helper.cs" caret="430" scrollPosition="0|0" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="176" scrollPosition="0|0" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="117" scrollPosition="0|36" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_verify_calls_made_in_a_virtual_method.cs" caret="0" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_setup_exceptions_on_dependency_calls.cs" caret="0" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_setup_exceptions_within_the_class.cs" caret="0" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:BehaviorOf.cs" caret="175" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/f:App.xaml.cs" caret="202" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:TestObjectInterceptor.cs" caret="429" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectFactoryBehavior/f:Given_TestObjectFactory_When_CreateProperty.cs" caret="638" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectInterceptorBehavior/f:Given_TestObjectInterceptor.cs" caret="760" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor.cs" caret="377" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:Call.cs" caret="64" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor_When_ThrowExceptionIfExpected.cs" caret="930" scrollPosition="0|6" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="1145" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classes/f:Class.cs" caret="1703" scrollPosition="0|9" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:Log.cs" caret="122" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="390" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:CallClass.cs" caret="1464" scrollPosition="0|45" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestObjectFactory.cs" caret="2206" scrollPosition="0|49" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestProcessorClass.cs" caret="1843" scrollPosition="0|53" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="1984" scrollPosition="0|54" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:ClassInterceptor.cs" caret="281" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="237" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="1509" scrollPosition="0|39" />
     </RecentFiles>
     <RecentEdits>
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/f:TestObjectInterceptor.cs" caret="1883" scrollPosition="0|0" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
-      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:LogClass.cs" caret="1001" scrollPosition="0|0" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classes/f:Class.cs" caret="2485" scrollPosition="0|3" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="160" scrollPosition="0|0" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="176" scrollPosition="0|0" />
-      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="173" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/f:App.xaml.cs" caret="202" scrollPosition="0|2" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectFactoryBehavior/f:Given_TestObjectFactory_When_CreateProperty.cs" caret="410" scrollPosition="23|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectFactoryBehavior/f:Given_TestObjectFactory_When_CreateProperty.cs" caret="750" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectFactoryBehavior/f:Given_TestObjectFactory_When_CreateProperty.cs" caret="1032" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectFactoryBehavior/f:Given_TestObjectFactory_When_CreateProperty.cs" caret="1324" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectInterceptorBehavior/f:Given_TestObjectInterceptor.cs" caret="3375" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestObjectInterceptorBehavior/f:Given_TestObjectInterceptor.cs" caret="449" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor.cs" caret="4914" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor.cs" caret="374" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor_When_ThrowExceptionIfExpected.cs" caret="145" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor_When_ThrowExceptionIfExpected.cs" caret="714" scrollPosition="0|12" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor_When_ThrowExceptionIfExpected.cs" caret="361" scrollPosition="0|6" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor_When_ThrowExceptionIfExpected.cs" caret="573" scrollPosition="0|6" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:TestProcessorBehavior/f:Given_TestProcessor_When_ThrowExceptionIfExpected.cs" caret="930" scrollPosition="0|6" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="5300" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="5300" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="551" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="1129" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="240" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="1284" scrollPosition="0|0" />
+      <File id="AB1B088E-445D-4F11-8E0A-76A6F6B02CF1/d:CallBehavior/f:Given_Call.cs" caret="551" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="2132" scrollPosition="0|36" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="2132" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Fluent/f:How_to_use_args.cs" caret="327" scrollPosition="0|0" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestObjectFactory.cs" caret="2561" scrollPosition="0|55" />
+      <File id="13A112A8-CBA7-47B3-BC0E-BF147988C32E/d:Classes/f:TestObjectFactory.cs" caret="2206" scrollPosition="0|49" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="355" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithExtensions/f:How_to_use_args.cs" caret="1984" scrollPosition="0|54" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="358" scrollPosition="0|0" />
+      <File id="D960EC10-5EF4-4C40-947E-C92EEA66BF69/d:Classic/d:WithStatics/f:How_to_use_args.cs" caret="2050" scrollPosition="0|39" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
@@ -59,6 +92,18 @@
       <Item value="from" priority="1" />
       <Item value="where" priority="0" />
       <Item value="select" priority="0" />
+      <Item value="Another" priority="0" />
+      <Item value="TestInitialize" priority="4" />
+      <Item value="public" priority="5" />
+      <Item value="void" priority="1" />
+      <Item value="using" priority="0" />
+      <Item value="FluentSpec" priority="0" />
+      <Item value="protected" priority="0" />
+      <Item value="SetupSubject" priority="0" />
+      <Item value="TestMethod" priority="0" />
+      <Item value="PropertyInfo" priority="0" />
+      <Item value="override" priority="2" />
+      <Item value="Property" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Contains" priority="1" />
@@ -79,6 +124,18 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:FluentSpec.Call">
       <Item value="Equals" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentSpec.Classes.CallClass">
+      <Item value="Method" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@FluentSpec.Test.Unit.Helper">
+      <Item value="TesteableProperty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
+      <Item value="CanRead" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

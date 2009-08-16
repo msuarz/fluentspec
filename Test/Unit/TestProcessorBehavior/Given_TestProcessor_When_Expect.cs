@@ -7,7 +7,7 @@ namespace FluentSpec.Test.Unit.TestProcessorBehavior {
     public class Given_TestProcessor_When_Expect : BehaviorOf<TestProcessorClass>{
 
         [TestInitialize]
-        public void Setup() { When.Expect(); }
+        public void SetUp() { When.Expect(); }
 
         [TestMethod]
         public void Should_Call_WillBeExpected() {

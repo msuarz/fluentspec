@@ -7,7 +7,7 @@ namespace FluentSpec.Test.Unit.TestProcessorBehavior {
     public class Given_TestProcessor_When_Record : BehaviorOf<TestProcessorClass>{
         
         [TestInitialize]
-        public void Setup() { When.Record(); }
+        public void SetUp() { When.Record(); }
         
         [TestMethod]
         public void Should_Should_Log_Call() {

@@ -4,12 +4,19 @@ using System.Linq;
 namespace FluentSpec.Classes {
 
     public class LogClass : Log {
-
-        public List<Call> ExpectedCalls = new List<Call>();
-        public List<Call> ActualCalls = new List<Call>();
+        
+        List<Call> ExpectedCalls = new List<Call>();
+        readonly List<Call> ActualCalls = new List<Call>();
 
         public void Record(Call Call) {
             ActualCalls.Add(Call);
+
+            if (!Call.IsSetter) return;
+            
+            var Getter = ObjectFactory.CallFrom(Call);
+            Getter.WillBeExpected();
+            Expect(Getter);
+            ActualCalls.Add(Getter);
         }
 
         public bool Recorded(Call ExpectedCall) { return

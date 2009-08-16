@@ -13,7 +13,7 @@ namespace FluentSpec.Test.Unit.TestProcessorBehavior {
         private void TestExecute() { Executed = true; }
         
         [TestInitialize]
-        public void Setup() {
+        public void SetUp() {
             Given.Execute = TestExecute;
             When.Process(Log, Call);
         }

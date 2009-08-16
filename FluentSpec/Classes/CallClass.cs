@@ -7,7 +7,7 @@ namespace FluentSpec.Classes {
 
         public Comparer Comparer { get; set; }
 
-        readonly MethodInfo MethodInfo;
+        public MethodInfo MethodInfo { get; private set; }
         public virtual Type ReturnType { get { return MethodInfo.ReturnType; } }
 
         string method = string.Empty;
@@ -22,7 +22,7 @@ namespace FluentSpec.Classes {
             set { args = value; }
         }
 
-        public CallClass(){}
+        public CallClass() {}
 
         public CallClass(MethodInfo MethodInfo, params object[] Args) {
             this.MethodInfo = MethodInfo;
@@ -68,6 +68,11 @@ namespace FluentSpec.Classes {
         public virtual bool IsSetter { get { return 
             MethodInfo.IsSpecialName
             && MethodInfo.Name.StartsWith("set_")
+        ;}}
+
+        protected virtual bool IsGetter { get { return 
+            MethodInfo.IsSpecialName
+            && MethodInfo.Name.StartsWith("get_")
         ;}}
 
         public virtual bool WasSetter { get { return

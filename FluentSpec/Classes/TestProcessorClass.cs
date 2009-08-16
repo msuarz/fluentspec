@@ -9,9 +9,7 @@ namespace FluentSpec.Classes {
 
         public Log Log { get; set; }
         public Call Call { get; set; }
-
-        public delegate void Command();
-        public Command Execute;
+        public Action Execute { get; set; }
 
         public TestProcessorClass() { Reset(); }
 

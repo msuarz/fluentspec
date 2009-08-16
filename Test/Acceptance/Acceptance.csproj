@@ -84,6 +84,7 @@
     <Compile Include="EdgeCases\What_if_the_SUT_is_an_interface.cs" />
     <Compile Include="Fluent\How_to_inject_dependencies.cs" />
     <Compile Include="Fluent\How_to_use_args.cs" />
+    <Compile Include="Fluent\How_to_use_Properties.cs" />
     <Compile Include="Fluent\How_to_verify_dependency_calls.cs" />
     <Compile Include="Fluent\How_to_setup_exceptions_on_dependency_calls.cs" />
     <Compile Include="Fluent\How_to_setup_return_values_on_dependency_calls.cs" />

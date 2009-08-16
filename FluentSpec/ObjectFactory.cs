@@ -21,7 +21,10 @@ namespace FluentSpec {
         public static TestObjectInterceptor InterfaceInterceptor(TestProcessor Processor) { return new InterfaceInterceptor {
             Processor = Processor,
             Log = Log
-        };} 
+        };}
 
+        public static Call CallFrom(Call Call) {return 
+            new CallClass(Call.MethodInfo, Call.Args) { Comparer = new ComparerClass() }
+        ;}
     }
 }

@@ -7,7 +7,7 @@ namespace FluentSpec.Test.Unit.TestProcessorBehavior {
     public class Given_TestProcessor_When_Reset : BehaviorOf<TestProcessorClass> {
         
         [TestInitialize]
-        public void Setup() { When.Reset(); }
+        public void SetUp() { When.Reset(); }
         
         [TestMethod]
         public void Should_Setup_Record() {

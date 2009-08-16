@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace FluentSpec.Test.Acceptance.Classes {
 
@@ -16,6 +17,10 @@ namespace FluentSpec.Test.Acceptance.Classes {
             VirtualProperty = Dependency.Property = true;
         }
 
+        public void AddAnElement() { 
+            List.Add("an element");
+        }
+
         #region virtual methods
 
         public virtual void VirtualMethod() {
@@ -24,6 +29,11 @@ namespace FluentSpec.Test.Acceptance.Classes {
 
         public virtual void AnotherVirtualMethod() {
             throw new NotImplementedException();
+        }
+
+        public virtual List<string> List {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
         }
 
         public virtual object VirtualProperty {

@@ -1,0 +1,29 @@
+!|FluentSpec.NaturalSyntax|
+
+!* '''Feature:''' ''Setup return values within the class''
+In order to increase the SUT isolation
+As a developer
+I want to setup return values within the class
+
+*!
+|given that the |Subject| is a |problem solver|
+
+----'''Scenario:''' ''Divide and conquer''----
+|when executing a |complex method|
+|it should |divide| and |conquer|
+
+----'''Scenario:''' ''Factorial''----
+|the |factorial| of |1| should be |1|
+
+|given that |factorial| of |41| is |42|
+|then |factorial| of |42| should be |42 * 42|
+
+----'''Scenario:''' ''Human Traffic''----
+|Given a |Person|
+|When asked to |Move|
+|He or she should |Walk|
+
+!define Subject {The Long John Silver}
+|Given that |${Subject}| is a |Pirate| with |1| leg|
+|When |${Subject}| tries to |Move|
+|Then |${Subject}| should |Limp|

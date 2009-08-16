@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace FluentSpec {
 
@@ -11,6 +12,8 @@ namespace FluentSpec {
         object Result { get; set; }
         bool ShouldThrowException { get; }
         Exception Exception { get; }
+        bool IsSetter { get; }
+        MethodInfo MethodInfo { get; }
 
         void IgnoreArgs();
         void WillThrow(Exception Exception);
