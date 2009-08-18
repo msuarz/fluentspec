@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BehaviorAssertions.cs" />
+    <Compile Include="ShouldAssertions.cs" />
     <Compile Include="BehaviorExtensions.cs" />
     <Compile Include="Call.cs" />
     <Compile Include="Classes\CallClass.cs" />

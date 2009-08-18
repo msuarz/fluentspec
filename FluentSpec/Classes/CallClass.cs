@@ -7,8 +7,9 @@ namespace FluentSpec.Classes {
 
         public Comparer Comparer { get; set; }
 
-        public MethodInfo MethodInfo { get; private set; }
+        public MethodInfo MethodInfo { get; set; }
         public virtual Type ReturnType { get { return MethodInfo.ReturnType; } }
+        protected bool IsOriginal { get { return MethodInfo.Name == Method; } }
 
         string method = string.Empty;
         public string Method {
@@ -89,6 +90,15 @@ namespace FluentSpec.Classes {
             
             return Method.Equals(Other.Method)
                 && HaveMatchingArgsWith(Other);
+        }
+
+        public void WasRecordedBy(Log Log) { 
+            if (!IsSetter || !IsOriginal) return;
+            
+            var Getter = ObjectFactory.CallFrom(this);
+            Getter.WillBeExpected();
+            Log.Expect(Getter);
+            Log.Record(Getter);        
         }
 
         public virtual bool HaveMatchingArgsWith(CallClass Other) { return

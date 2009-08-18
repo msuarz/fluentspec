@@ -1,6 +1,6 @@
 using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Specs.Classes;
+using Specs.Helpers;
 
 namespace Specs {
 

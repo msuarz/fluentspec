@@ -12,13 +12,13 @@ namespace FluentSpec.Test.Unit.TestProcessorBehavior {
         [TestMethod]
         public void Should_Should_Log_Call() {
 
-            Should.Log.Record(Actual.Call);
+            Then.Log.Should().Record(Actual.Call);
         }
         
         [TestMethod]
         public void Should_ThrowExceptionIfExpected() {
             
-            Should.ThrowExceptionIfExpected();
+            Then.Should().ThrowExceptionIfExpected();
         }
     }
 }

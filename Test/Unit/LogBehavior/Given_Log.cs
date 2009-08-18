@@ -14,9 +14,9 @@ namespace FluentSpec.Test.Unit.LogBehavior {
             Call.Given().Equals(Call).Is(true);
             
             When.Record(Call);
-
-            Assert.IsTrue(That.Recorded(Call));
-            Assert.IsFalse(That.Recorded(AnotherCall));
+            
+            Then.Recorded(Call).ShouldBeTrue();
+            Then.Recorded(AnotherCall).ShouldBeFalse();
         }
     }
 }

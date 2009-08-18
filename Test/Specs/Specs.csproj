@@ -38,8 +38,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Class.cs" />
+    <Compile Include="Helpers\Actors.cs" />
+    <Compile Include="Helpers\Class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="given_a_virtual_Property_is_set_during_a_test.cs" />
     <Compile Include="when_setting_up_return_values_of_a_Subject.cs" />
   </ItemGroup>
   <ItemGroup>

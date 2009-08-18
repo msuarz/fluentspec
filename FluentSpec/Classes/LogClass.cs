@@ -10,13 +10,7 @@ namespace FluentSpec.Classes {
 
         public void Record(Call Call) {
             ActualCalls.Add(Call);
-
-            if (!Call.IsSetter) return;
-            
-            var Getter = ObjectFactory.CallFrom(Call);
-            Getter.WillBeExpected();
-            Expect(Getter);
-            ActualCalls.Add(Getter);
+            Call.WasRecordedBy(this);
         }
 
         public bool Recorded(Call ExpectedCall) { return

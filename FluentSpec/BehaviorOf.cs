@@ -33,6 +33,7 @@ namespace FluentSpec {
         
         protected SubjectClass Expected { get { return Subject; } }
         protected SubjectClass Actual { get { return Subject; } }
+        protected SubjectClass It { get { return Subject; } }
         
         protected SubjectClass That { get { return When; } }
         protected SubjectClass The { get { return When; } }

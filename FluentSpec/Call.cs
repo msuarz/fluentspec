@@ -20,5 +20,6 @@ namespace FluentSpec {
         void WillBeExpected();
 
         bool Equals(object obj);
+        void WasRecordedBy(Log Log);
     }
 }
