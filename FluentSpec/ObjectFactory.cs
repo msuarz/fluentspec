@@ -9,10 +9,6 @@ namespace FluentSpec {
 
         public static Log Log { get { return new LogClass(); } }
 
-        public static Call Call(MethodInfo Method, params object[] Args) { return 
-            new CallClass(Method, Args) { Comparer = new ComparerClass() }
-        ;}
-
         public static TestObjectInterceptor ClassInterceptor(TestProcessor Processor) { return new ClassInterceptor {
             Processor = Processor,
             Log = Log
@@ -23,8 +19,15 @@ namespace FluentSpec {
             Log = Log
         };}
 
-        public static Call CallFrom(Call Call) {return 
-            new CallClass(Call.MethodInfo, Call.Args) { Comparer = new ComparerClass() }
+        public static Call Call(MethodInfo MethodInfo, params object[] Args) { return new CallClass {
+            MethodInfo = MethodInfo,
+            Method = MethodInfo.Name,
+            Args = Args,
+            Comparer = new ComparerClass()
+        };}
+
+        public static Call CallFrom(Call AnotherCall) { return 
+            Call(AnotherCall.MethodInfo, AnotherCall.Args)
         ;}
     }
 }

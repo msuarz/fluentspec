@@ -20,10 +20,7 @@ namespace Specs {
         }
         
         [TestClass]
-        public class when_the_Call_was_recorded : BehaviorOf<CallClass> {
-            
-            
-        }
+        public class when_the_Call_was_recorded : BehaviorOf<CallClass> {}
         
         [TestClass]
         public class when_the_Call_is_switched_to_getter : BehaviorOf<CallClass> {

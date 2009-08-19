@@ -23,14 +23,6 @@ namespace FluentSpec.Classes {
             set { args = value; }
         }
 
-        public CallClass() {}
-
-        public CallClass(MethodInfo MethodInfo, params object[] Args) {
-            this.MethodInfo = MethodInfo;
-            Method =  MethodInfo.Name;
-            this.Args = Args;
-        }
-
         object result;
         bool hasResult;
         public virtual object Result {
