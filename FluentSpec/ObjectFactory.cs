@@ -19,7 +19,20 @@ namespace FluentSpec {
             Log = Log
         };}
 
-        public static Call Call(MethodInfo MethodInfo, params object[] Args) { return new Method {
+        public static Call Call(MethodInfo MethodInfo, params object[] Args) { return 
+            MethodInfo.IsProperty() ? 
+                Property(MethodInfo, Args) : 
+                Method(MethodInfo, Args)
+        ;}
+
+        public static Call Method(MethodInfo MethodInfo, params object[] Args) { return new Method {
+            MethodInfo = MethodInfo,
+            Name = MethodInfo.Name,
+            Args = Args,
+            Comparer = new ComparerClass()
+        };}
+
+        public static Call Property(MethodInfo MethodInfo, params object[] Args) { return new Property {
             MethodInfo = MethodInfo,
             Name = MethodInfo.Name,
             Args = Args,

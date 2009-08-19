@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 
 namespace Specs.Helpers {
@@ -10,6 +11,10 @@ namespace Specs.Helpers {
 
         public static MethodInfo VirtualSetter { get { return
             typeof(Class).GetMethod("set_VirtualProperty")
+        ;}}
+
+        public static MethodInfo Method { get { return
+            typeof(Class).GetMethod("Method")
         ;}}
     }
 }

@@ -10,5 +10,7 @@ namespace Specs.Helpers {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
+        
+        public void Method(){}
     }
 }
