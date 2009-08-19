@@ -36,8 +36,7 @@ namespace FluentSpec.Classes {
         }}
 
         public bool ShouldThrowException { get; private set; }
-        public void WillThrow(Exception Exception) {
-            if (WasSetter) SwitchToSetter();
+        public virtual void WillThrow(Exception Exception) {
             ShouldThrowException = true;
             Result = Exception;
         }

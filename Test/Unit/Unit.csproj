@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CallBehavior\Given_Call.cs" />
-    <Compile Include="CallBehavior\Given_Call_When_WillThrow.cs" />
     <Compile Include="ComparerBehavior\Given_Comparer_With_Arrays.cs" />
     <Compile Include="ComparerBehavior\Given_Comparer_With_Objects.cs" />
     <Compile Include="Helper.cs" />
