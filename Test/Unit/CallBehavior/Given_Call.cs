@@ -156,14 +156,5 @@ namespace FluentSpec.Test.Unit.CallBehavior {
             Assert.IsTrue(That.GetHashCode() != Another.GetHashCode());
         }
         
-        [TestMethod]
-        public void When_WillBeExpected_Should_SwitchToGetter_If_IsSetter() {
-            
-            Given.IsSetter.WillReturn(true);
-            When.WillBeExpected();
-            Should.SwitchToGetter();
-        }
-        
-        
     }
 }

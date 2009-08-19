@@ -38,6 +38,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="given_a_virtual_Property_is_setup_for_a_test.cs" />
     <Compile Include="Helpers\Actors.cs" />
     <Compile Include="Helpers\Class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

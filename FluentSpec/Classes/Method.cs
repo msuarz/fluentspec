@@ -42,9 +42,7 @@ namespace FluentSpec.Classes {
             Result = Exception;
         }
 
-        public void WillBeExpected() {
-            if (IsSetter) SwitchToGetter();
-        }
+        public virtual void WillBeExpected() {}
 
         public virtual void SwitchToSetter() {
             Name = "set_" + Name.Remove(0, 4);
@@ -59,13 +57,11 @@ namespace FluentSpec.Classes {
         }
 
         public virtual bool IsSetter { get { return 
-            MethodInfo.IsSpecialName
-            && MethodInfo.Name.StartsWith("set_")
+            MethodInfo.IsSetter()
         ;}}
 
         protected virtual bool IsGetter { get { return 
-            MethodInfo.IsSpecialName
-            && MethodInfo.Name.StartsWith("get_")
+            MethodInfo.IsGetter()
         ;}}
 
         public virtual bool WasSetter { get { return
