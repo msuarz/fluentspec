@@ -4,23 +4,23 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FluentSpec.Test.Unit.CallBehavior {
 
     [TestClass]
-    public class Given_Call : BehaviorOf<CallClass> {
+    public class Given_Call : BehaviorOf<Method> {
         
-        const string Method = "Method";
+        const string Method = "Name";
         const string AnotherMethod = "AnotherMethod";
-        readonly CallClass Another = TestObjectFor<CallClass>();
+        readonly Method Another = TestObjectFor<Method>();
         readonly object ExpectedResult = new object();
         readonly object[] Args = new object[0];
         readonly object[] AnotherArgs = new object[0];
 
         private void GivenSameMethods() {
-            Given.Method = Method;
-            Another.Method = Method;
+            Given.Name = Method;
+            Another.Name = Method;
         }
 
         private void GivenDifferentMethods() {
-            Given.Method = Method;
-            Another.Method = AnotherMethod;
+            Given.Name = Method;
+            Another.Name = AnotherMethod;
         }
         
         private void GivenSameArgs() {
@@ -132,7 +132,7 @@ namespace FluentSpec.Test.Unit.CallBehavior {
         [TestMethod]
         public void When_GetHashCode_Should_Equal_If_Properties_Are_Null() {
 
-            Given.Method = Another.Method = null;
+            Given.Name = Another.Name = null;
             Given.Args = Another.Args = null;
 
             Assert.IsTrue(That.GetHashCode() == Another.GetHashCode());

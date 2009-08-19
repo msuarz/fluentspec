@@ -5,7 +5,7 @@ namespace FluentSpec {
 
     public interface Call {
     
-        string Method { get; }
+        string Name { get; }
         Type ReturnType { get; }
         object[] Args { get; }
 

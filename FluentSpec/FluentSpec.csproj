@@ -51,7 +51,7 @@
     <Compile Include="ShouldAssertions.cs" />
     <Compile Include="BehaviorExtensions.cs" />
     <Compile Include="Call.cs" />
-    <Compile Include="Classes\CallClass.cs" />
+    <Compile Include="Classes\Method.cs" />
     <Compile Include="Classes\ClassInterceptor.cs" />
     <Compile Include="Classes\ComparerClass.cs" />
     <Compile Include="Classes\InterfaceInterceptor.cs" />

@@ -3,18 +3,18 @@ using System.Reflection;
 
 namespace FluentSpec.Classes {
 
-    public class CallClass : Call {
+    public class Method : Call {
 
         public Comparer Comparer { get; set; }
 
         public MethodInfo MethodInfo { get; set; }
         public virtual Type ReturnType { get { return MethodInfo.ReturnType; } }
-        protected bool IsOriginal { get { return MethodInfo.Name == Method; } }
+        protected bool IsOriginal { get { return MethodInfo.Name == Name; } }
 
-        string method = string.Empty;
-        public string Method {
-            get { return method; }
-            set { method = value; }
+        string name = string.Empty;
+        public string Name {
+            get { return name; }
+            set { name = value; }
         }
 
         object[] args = new object[0];
@@ -47,13 +47,13 @@ namespace FluentSpec.Classes {
         }
 
         public virtual void SwitchToSetter() {
-            Method = "set_" + Method.Remove(0, 4);
+            Name = "set_" + Name.Remove(0, 4);
             Array.Resize(ref args, Args.Length + 1);
             Args[Args.Length - 1] = Result;
         }
 
         public virtual void SwitchToGetter() {
-            Method = "get_" + Method.Remove(0, 4);
+            Name = "get_" + Name.Remove(0, 4);
             Result = Args[Args.Length - 1];
             Array.Resize(ref args, Args.Length - 1);
         }
@@ -69,7 +69,7 @@ namespace FluentSpec.Classes {
         ;}}
 
         public virtual bool WasSetter { get { return
-            IsSetter && Method != MethodInfo.Name
+            IsSetter && Name != MethodInfo.Name
         ;}}
 
         public Exception Exception { get { return Result as Exception; } }
@@ -78,9 +78,9 @@ namespace FluentSpec.Classes {
         public void IgnoreArgs() { ShouldIgnoreArgs = true; }
 
         public override bool Equals(object obj) { 
-            var Other = obj as CallClass;
+            var Other = obj as Method;
             
-            return Method.Equals(Other.Method)
+            return Name.Equals(Other.Name)
                 && HaveMatchingArgsWith(Other);
         }
 
@@ -93,19 +93,19 @@ namespace FluentSpec.Classes {
             Log.Record(Getter);        
         }
 
-        public virtual bool HaveMatchingArgsWith(CallClass Other) { return
+        public virtual bool HaveMatchingArgsWith(Method Other) { return
             ShouldIgnoreArgs
             || Other.ShouldIgnoreArgs
             || Comparer.AreEqual(Args, Other.Args)
         ;}
 
         public override int GetHashCode() { unchecked { return 
-            ((Method != null ? Method.GetHashCode() : 0)*397) ^ 
+            ((Name != null ? Name.GetHashCode() : 0)*397) ^ 
             (Args != null ? Args.GetHashCode() : 0)
         ;}}
 
         public override string ToString() { return
-            MethodInfo.DeclaringType.Name + "." + Method
+            MethodInfo.DeclaringType.Name + "." + Name
         ;}
     }
 }

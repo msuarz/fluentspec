@@ -5,7 +5,7 @@ using System;
 namespace FluentSpec.Test.Unit.CallBehavior {
 
     [TestClass]
-    public class Given_Call_When_WillThrow : BehaviorOf<CallClass> {
+    public class Given_Call_When_WillThrow : BehaviorOf<Method> {
 
         readonly Exception ExpectedException = new Exception();
 

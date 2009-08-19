@@ -20,17 +20,17 @@ namespace Specs {
         }
         
         [TestClass]
-        public class when_the_Call_was_recorded : BehaviorOf<CallClass> {}
+        public class when_the_Call_was_recorded : BehaviorOf<Method> {}
         
         [TestClass]
-        public class when_the_Call_is_switched_to_getter : BehaviorOf<CallClass> {
+        public class when_the_Call_is_switched_to_getter : BehaviorOf<Method> {
         
             readonly object Value = new object();
 
             [TestInitialize]
             public void SetUp() {
                 Given.MethodInfo = Actors.VirtualSetter;
-                Given.Method = "set_VirtualProperty";
+                Given.Name = "set_VirtualProperty";
                 Given.Args = new [] { Value };
 
                 When.SwitchToGetter();
@@ -39,7 +39,7 @@ namespace Specs {
             [TestMethod]
             public void the_Method_prefix_should_change_to_get() {
 
-                Then.Method.ShouldBe("get_VirtualProperty");
+                Then.Name.ShouldBe("get_VirtualProperty");
             }
             
             [TestMethod]

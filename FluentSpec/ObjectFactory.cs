@@ -19,9 +19,9 @@ namespace FluentSpec {
             Log = Log
         };}
 
-        public static Call Call(MethodInfo MethodInfo, params object[] Args) { return new CallClass {
+        public static Call Call(MethodInfo MethodInfo, params object[] Args) { return new Method {
             MethodInfo = MethodInfo,
-            Method = MethodInfo.Name,
+            Name = MethodInfo.Name,
             Args = Args,
             Comparer = new ComparerClass()
         };}
