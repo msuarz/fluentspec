@@ -23,7 +23,7 @@ namespace Specs {
         public class when_the_Call_was_recorded : BehaviorOf<Method> {}
         
         [TestClass]
-        public class when_the_Call_is_switched_to_getter : BehaviorOf<Method> {
+        public class when_the_Call_is_switched_to_getter : BehaviorOf<Property> {
         
             readonly object Value = new object();
 

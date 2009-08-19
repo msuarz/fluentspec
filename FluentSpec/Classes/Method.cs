@@ -9,19 +9,14 @@ namespace FluentSpec.Classes {
 
         public MethodInfo MethodInfo { get; set; }
         public virtual Type ReturnType { get { return MethodInfo.ReturnType; } }
-        protected bool IsOriginal { get { return MethodInfo.Name == Name; } }
-
-        string name = string.Empty;
-        public string Name {
-            get { return name; }
-            set { name = value; }
+        
+        public Method() {
+            Name = string.Empty;
+            Args = new object[0];
         }
 
-        object[] args = new object[0];
-        public object[] Args {
-            get { return args; }
-            set { args = value; }
-        }
+        public string Name { get; set; }
+        public object[] Args { get; set; }
 
         object result;
         bool hasResult;
@@ -42,30 +37,7 @@ namespace FluentSpec.Classes {
         }
 
         public virtual void WillBeExpected() {}
-
-        public virtual void SwitchToSetter() {
-            Name = "set_" + Name.Remove(0, 4);
-            Array.Resize(ref args, Args.Length + 1);
-            Args[Args.Length - 1] = Result;
-        }
-
-        public virtual void SwitchToGetter() {
-            Name = "get_" + Name.Remove(0, 4);
-            Result = Args[Args.Length - 1];
-            Array.Resize(ref args, Args.Length - 1);
-        }
-
-        public virtual bool IsSetter { get { return 
-            MethodInfo.IsSetter()
-        ;}}
-
-        protected virtual bool IsGetter { get { return 
-            MethodInfo.IsGetter()
-        ;}}
-
-        public virtual bool WasSetter { get { return
-            IsSetter && Name != MethodInfo.Name
-        ;}}
+        public virtual void WasRecordedBy(Log Log) {}
 
         public Exception Exception { get { return Result as Exception; } }
 
@@ -77,15 +49,6 @@ namespace FluentSpec.Classes {
             
             return Name.Equals(Other.Name)
                 && HaveMatchingArgsWith(Other);
-        }
-
-        public void WasRecordedBy(Log Log) { 
-            if (!IsSetter || !IsOriginal) return;
-            
-            var Getter = ObjectFactory.CallFrom(this);
-            Getter.WillBeExpected();
-            Log.Expect(Getter);
-            Log.Record(Getter);        
         }
 
         public virtual bool HaveMatchingArgsWith(Method Other) { return
