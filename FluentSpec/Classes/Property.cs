@@ -40,10 +40,6 @@ namespace FluentSpec.Classes {
             MethodInfo.IsSetter()
         ;}}
 
-        protected virtual bool IsGetter { get { return 
-            MethodInfo.IsGetter()
-        ;}}
-
         public virtual bool WasSetter { get { return
             IsSetter && Name != MethodInfo.Name
         ;}}

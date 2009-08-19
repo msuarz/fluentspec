@@ -22,10 +22,6 @@ namespace FluentSpec.Classes {
             ExpectedCalls.Add(ActualCall);
         }
 
-        public virtual int IndexOf(Call ActualCall) { return 
-            ExpectedCalls.IndexOf(ActualCall)
-        ;}
-
         public virtual Call Expected(Call ActualCall) { return
             ExpectedCalls.Where(Call => Call.Equals(ActualCall)).FirstOrDefault()
         ;}
