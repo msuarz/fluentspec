@@ -3,7 +3,7 @@ using FluentSpec.Classes;
 
 namespace FluentSpec {
 
-    public class ObjectFactory {
+    internal class ObjectFactory {
 
         public static TestProcessor TestProcessor { get { return new TestProcessorClass(); } }
 
