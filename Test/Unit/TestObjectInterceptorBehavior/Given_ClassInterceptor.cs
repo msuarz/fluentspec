@@ -32,6 +32,14 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
             Assert.IsFalse(That.ShouldInvokeBase);
         }
 
+        [TestMethod]
+        public void ShouldNotInvokeBase_If_protected() {
+
+            Given.IsProtectedCall.Is(true);
+            
+            When.ShouldInvokeBase.ShouldBeTrue();
+        }
+        
         readonly object InvocationTarget = new object();
         readonly Type SameType = typeof(object);
         readonly Type DifferentType = typeof(void);

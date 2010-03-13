@@ -15,7 +15,8 @@ namespace FluentSpec.Classes {
         }
 
         public virtual bool ShouldInvokeBase { get { return
-            Processor.ExpectSubjectAction && WasExternalCall
+            IsProtectedCall ||
+            (Processor.ExpectSubjectAction && WasExternalCall)
         ;}}
 
         public virtual  bool WasExternalCall { get { return 
@@ -29,5 +30,6 @@ namespace FluentSpec.Classes {
             return Method.DeclaringType;
         }}
 
+        public virtual bool IsProtectedCall { get { return Invocation.Method.IsFamily; }}
     }
 }
