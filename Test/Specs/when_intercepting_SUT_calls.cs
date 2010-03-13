@@ -12,12 +12,6 @@ namespace Specs {
 
             this.ShouldFail(When.ThrowExceptionInProtectedMethod);
         }
-
-        [TestMethod]
-        public void should_not_intercept_inherited_protected_methods() {
-
-            this.ShouldFail(When.ThrowExceptionInProtectedMethod);
-        }
     }
     
     public class ProtectedMethodCallsBase {
