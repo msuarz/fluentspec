@@ -6,28 +6,28 @@ namespace FluentSpec {
 
     public static class ShouldAssertions {
     
-        public static void ShouldBeOfType(this object Obj, Type Type) {
-            Obj.GetType().ShouldBe(Type);
+        public static void ShouldBeOfType(this object Actual, Type ExpectedType) {
+            Actual.GetType().ShouldBe(ExpectedType);
         }
         
-        public static void ShouldNotBeOfType(this object Obj, Type Type) {
-            Obj.GetType().ShouldNotBe(Type);
+        public static void ShouldNotBeOfType(this object Actual, Type NotExpectedType) {
+            Actual.GetType().ShouldNotBe(NotExpectedType);
         }
         
         public static void ShouldBe(this object Actual, object Expected) {
             Assert.AreEqual(Expected, Actual);
         }
         
-        public static void ShouldNotBe(this object Obj, object Another) {
-            Assert.AreNotEqual(Obj, Another);
+        public static void ShouldNotBe(this object Actual, object NotExpected) {
+            Assert.AreNotEqual(NotExpected, Actual);
         }
         
-        public static void ShouldBeNull(this object Obj) {
-            Assert.IsNull(Obj);
+        public static void ShouldBeNull(this object Actual) {
+            Actual.ShouldBe(null);
         }
         
-        public static void ShouldNotBeNull(this object Obj) {
-            Assert.IsNotNull(Obj);
+        public static void ShouldNotBeNull(this object Actual) {
+            Actual.ShouldNotBe(null);
         }
         
         public static void ShouldFail(this object Obj, Action Action) {

@@ -19,5 +19,14 @@ namespace Specs {
             42.ShouldBe(42);
             "hello".ShouldNotBe("good bye");
         }
+
+        [TestMethod]
+        public void it_should_be_possible_to_check_null_values() {
+
+            NullObject.ShouldBeNull();
+            new object().ShouldNotBeNull();
+        }
+
+        object NullObject { get { return null; } }
     }
 }
