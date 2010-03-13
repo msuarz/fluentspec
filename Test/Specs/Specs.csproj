@@ -46,6 +46,7 @@
     <Compile Include="given_a_virtual_Property_is_set_during_a_test.cs" />
     <Compile Include="when_a_Call_is_made.cs" />
     <Compile Include="when_setting_up_return_values_of_a_Subject.cs" />
+    <Compile Include="when_verifying_expectations.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\FluentSpec\FluentSpec.csproj">
