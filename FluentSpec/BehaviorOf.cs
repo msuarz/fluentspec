@@ -44,6 +44,7 @@ namespace FluentSpec {
         SubjectClass then() { return Should; }
         
         protected SubjectClass And { get { return LastConnector(); } }
+        protected SubjectClass But { get { return And; } }
 
         protected SubjectClass Expected { get { return Subject; } }
         protected SubjectClass Actual { get { return Subject; } }

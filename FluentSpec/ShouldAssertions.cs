@@ -33,7 +33,7 @@ namespace FluentSpec {
         public static void ShouldFail(this object Obj, Action Action) {
             var Failed = false;
             
-            try { Action.Invoke(); }
+            try { Action(); }
             catch { Failed = true; }
             
             if (!Failed) throw new Exception("Should have failed");
@@ -42,24 +42,28 @@ namespace FluentSpec {
         public static void ShouldFail<T>(this object Obj, Func<T> Func) {
             var Failed = false;
             
-            try { Func.Invoke(); }
+            try { Func(); }
             catch { Failed = true; }
             
             if (!Failed) throw new Exception("Should have failed");
         }
         
         public static void ShouldNotFail(this object Obj, Action Action) {
-            try { Action.Invoke(); }
+            try { Action(); }
             catch { throw new Exception("Should not have failed"); }
         }
         
         public static void ShouldNotFail<T>(this object Obj, Func<T> Func) {
-            try { Func.Invoke(); }
+            try { Func(); }
             catch { throw new Exception("Should not have failed"); }
         }
         
         public static void ShouldBeTrue(this bool Condition) {
             Assert.IsTrue(Condition);
+        }
+        
+        public static void ShouldBeTrue(this bool Condition, string Message) {
+            Assert.IsTrue(Condition, Message);
         }
         
         public static void ShouldBeTrue<T>(this T Condition) {
@@ -74,12 +78,21 @@ namespace FluentSpec {
             Assert.Fail("Should have failed");
         }
         
+        public static void ShouldHaveFailed(this object Obj, string Message) {
+            Assert.Fail(Message);
+        }
+        
         public static void ShouldBeEmpty<T>(this List<T> List) {
             Assert.IsTrue(List.Count == 0, "List have " + List.Count + " item(s)");
         }
 
         public static void ShouldContain<T>(this List<T> List, T Item) {
             Assert.IsTrue(List.Contains(Item), "List does not have " + Item);
+        }
+        
+        public static void ShouldEndWith(this string Whole, string Suffix) {
+            Whole.EndsWith(Suffix).ShouldBeTrue(
+               "\"" + Whole + "\" does not end with \"" + Suffix + "\"");
         }
         
         public static void ShouldNotBeEmpty(this string String) {

@@ -51,6 +51,7 @@
     <Compile Include="when_setting_up_return_values_of_a_Subject.cs" />
     <Compile Include="when_using_the_And_connector.cs" />
     <Compile Include="when_verifying_expectations.cs" />
+    <Compile Include="when_verifying_expectations_with_messages.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\FluentSpec\FluentSpec.csproj">

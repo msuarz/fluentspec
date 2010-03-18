@@ -1,3 +1,4 @@
+using System;
 using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,5 +29,25 @@ namespace Specs {
         }
 
         object NullObject { get { return null; } }
+        
+        [TestMethod]
+        public void it_should_be_possible_to_expect_failures() {
+            
+            this.ShouldFail(() => { throw new Exception(); });
+            this.ShouldNotFail(() => {});
+        }
+
+        [TestMethod]
+        public void it_should_be_possible_to_check_bools() {
+            
+            true.ShouldBeTrue();
+            false.ShouldBeFalse();
+        }
+        
+        [TestMethod]
+        public void it_should_be_possible_to_induce_failure() {
+            
+            this.ShouldFail(() => this.ShouldHaveFailed());
+        }
     }
 }
