@@ -4,7 +4,10 @@ namespace FluentSpec {
 
     public class BehaviorOf<SubjectClass> {
 
-        private SubjectClass Subject = TestObjectFor<SubjectClass>();
+        SubjectClass Subject = TestObjectFor<SubjectClass>();
+
+        public BehaviorOf() { LastConnector = () => { return Subject; }; }
+        
         public virtual void Setup() { Subject = TestObjectFor<SubjectClass>(); }
 
         private TestProcessor TestSubject { get { return (TestProcessor) Subject; } }
@@ -13,24 +16,35 @@ namespace FluentSpec {
             Create.TestObjectFor<T>(Args)
         ;}
 
-        protected SubjectClass Given { get { return
-            (SubjectClass) TestSubject.Given
+        Func<SubjectClass> LastConnector;
+        
+        protected SubjectClass Given { get {
+            LastConnector = given;
+            return (SubjectClass) TestSubject.Given;
+        }}
+        SubjectClass given() { return Given; }
+
+        protected SubjectClass When { get {
+            LastConnector = when;
+            return (SubjectClass) TestSubject.When;
+        }}
+        SubjectClass when() { return When; }
+
+        protected SubjectClass Should { get {
+            LastConnector = then;
+            return (SubjectClass) TestSubject.Should
         ;}}
 
-        protected SubjectClass When { get { return
-            (SubjectClass) TestSubject.When
-        ;}}
-
-        protected SubjectClass Should { get { return
-            (SubjectClass) TestSubject.Should
-        ;}}
-
-        protected SubjectClass ShouldNot { get { return
-            (SubjectClass) TestSubject.ShouldNot
-        ;}}
+        protected SubjectClass ShouldNot { get { 
+            LastConnector = then;
+            return (SubjectClass) TestSubject.ShouldNot;
+        }}
 
         protected SubjectClass Then { get { return Should; } }
+        SubjectClass then() { return Should; }
         
+        protected SubjectClass And { get { return LastConnector(); } }
+
         protected SubjectClass Expected { get { return Subject; } }
         protected SubjectClass Actual { get { return Subject; } }
         protected SubjectClass It { get { return Subject; } }
