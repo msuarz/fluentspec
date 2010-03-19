@@ -67,11 +67,19 @@ namespace FluentSpec {
         }
         
         public static void ShouldBeTrue<T>(this T Condition) {
-            Assert.IsTrue(Convert.ToBoolean(Condition));
+            Convert.ToBoolean(Condition).ShouldBeTrue();
         }
         
         public static void ShouldBeFalse(this bool Condition) {
             Assert.IsFalse(Condition);
+        }
+        
+        public static void ShouldBeFalse(this bool Condition, string Message) {
+            Assert.IsFalse(Condition, Message);
+        }
+        
+        public static void ShouldBeFalse<T>(this T Condition) {
+            Convert.ToBoolean(Condition).ShouldBeFalse();
         }
         
         public static void ShouldHaveFailed(this object Obj) {

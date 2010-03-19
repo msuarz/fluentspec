@@ -42,6 +42,10 @@ namespace Specs {
             
             true.ShouldBeTrue();
             false.ShouldBeFalse();
+            "true".ShouldBeTrue();
+            "false".ShouldBeFalse();
+            1.ShouldBeTrue();
+            0.ShouldBeFalse();
         }
         
         [TestMethod]

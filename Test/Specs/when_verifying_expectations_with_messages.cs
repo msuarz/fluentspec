@@ -14,6 +14,11 @@ namespace Specs {
                 () => false.ShouldBeTrue("contradiction"), 
                 "contradiction"
             );
+            
+            ShouldFailWithMessage(
+                () => true.ShouldBeFalse("contradiction"), 
+                "contradiction"
+            );
         }
         
         [TestMethod]
