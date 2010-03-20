@@ -48,7 +48,7 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
         public void When_WasExternalCall() {
             
             Given.Invocation.InvocationTarget.WillReturn(InvocationTarget);
-            Given.ExternalCaller.WillReturn(DifferentType);
+            Given.ExternalCallers.WillReturn(new[]{ DifferentType });
             
             Assert.IsTrue(That.WasExternalCall);
         }
@@ -57,7 +57,7 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
         public void When_WasInternalCall() {
 
             Given.Invocation.InvocationTarget.WillReturn(InvocationTarget);
-            Given.ExternalCaller.WillReturn(SameType);
+            Given.ExternalCallers.WillReturn(new[]{ SameType });
 
             Assert.IsFalse(That.WasExternalCall);
         }

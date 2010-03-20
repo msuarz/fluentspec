@@ -48,8 +48,8 @@ namespace FluentSpec.Test.Acceptance.Classic.WithExtensions {
         [TestMethod]
         public void use_Given_Dependency_Property_is_set_to_value_WillThrow_exception() {
 
-            Subject.Given().Dependency.Property = true;
-            Subject.WillThrow(ExpectedException);
+            (Subject.Given().Dependency.Property = true)
+                .WillThrow(ExpectedException);
 
             the_expected_exception_should_be_thrown_in_a_method();
         }

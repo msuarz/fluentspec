@@ -42,9 +42,10 @@ namespace Specs {
         public virtual int Another { get { throw new NotImplementedException(); } }
         public virtual int Sum { get { return One + Another; } }
         public virtual int Mult { get { return One * Another; } }
-        
+
         public virtual void Clear() { EraseMem(); ClearScreen(); }
         public virtual void EraseMem() { throw new NotImplementedException(); }
         public virtual void ClearScreen() { throw new NotImplementedException(); }
     }
+    
 }

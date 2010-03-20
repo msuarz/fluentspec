@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Castle.Core.Interceptor;
 
@@ -8,7 +10,7 @@ namespace FluentSpec.Classes {
 
         public override void Intercept(IInvocation Invocation) { 
             base.Intercept(Invocation);
-
+            
             if (ShouldInvokeTestClass) ProcessTestClassInvocation();
             else if (ShouldInvokeBase) Invocation.Proceed();
             else InterceptInvocation(); 
@@ -19,17 +21,20 @@ namespace FluentSpec.Classes {
             (Processor.ExpectSubjectAction && WasExternalCall)
         ;}}
 
-        public virtual  bool WasExternalCall { get { return 
-            !ExternalCaller.IsInstanceOfType(Invocation.InvocationTarget)
+        public virtual bool IsProtectedCall { get { return Invocation.Method.IsFamily; }}
+
+        public virtual bool WasExternalCall { get { return 
+            !ExternalCallers.Any(Caller => 
+                Caller.IsInstanceOfType(Invocation.InvocationTarget))
         ;}}
 
-        public virtual Type ExternalCaller { get {
+        public virtual IEnumerable<Type> ExternalCallers { get {
             var Stack = new StackTrace();
-            var Frame = Stack.GetFrame(6);
-            var Method = Frame.GetMethod();
-            return Method.DeclaringType;
+            for (var i = 7; i < Stack.FrameCount; i++) 
+                yield return Stack
+                    .GetFrame(i)
+                    .GetMethod()
+                    .DeclaringType;
         }}
-
-        public virtual bool IsProtectedCall { get { return Invocation.Method.IsFamily; }}
     }
 }
