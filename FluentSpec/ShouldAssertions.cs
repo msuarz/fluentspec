@@ -106,17 +106,49 @@ namespace FluentSpec {
             (List.Count > 0).ShouldBeTrue("Unexpected empty List");
         }
 
+        public static void ShouldBeEmpty(this string String) {
+            String.IsNullOrEmpty(String).ShouldBeTrue("'" + String + "' is not empty");
+        }
+        
         public static void ShouldNotBeEmpty(this string String) {
-            Assert.IsFalse(String.IsNullOrEmpty(String), "'" + String + "' is not empty");
+            String.IsNullOrEmpty(String).ShouldBeFalse("Unexpected empty string");
+        }
+        
+        public static void ShouldContain(this string Whole, string Part) {
+            
+            Whole.Contains(Part).ShouldBeTrue(
+                Whole.Quoted() + " does not contain " + Part.Quoted());
+        }
+        
+        public static void ShouldNotContain(this string Whole, string Part) {
+            
+            Whole.Contains(Part).ShouldBeFalse(
+                Whole.Quoted() + " should not contain " + Part.Quoted());
         }
         
         public static void ShouldContain<T>(this List<T> List, T Item) {
-            Assert.IsTrue(List.Contains(Item), "List does not have " + Item);
+
+            List.Contains(Item).ShouldBeTrue("List does not contain " + Item);
         }
         
+        public static void ShouldNotContain<T>(this List<T> List, T Item) {
+
+            List.Contains(Item).ShouldBeFalse("List should not contain " + Item);
+        }
+        
+        public static void ShouldContain<T>(this List<T> Items, List<T> SomeItems) {
+            
+            SomeItems.ForEach(Items.ShouldContain);
+        }
+
+        public static void ShouldNotContain<T>(this List<T> Items, List<T> SomeItems) {
+            
+            SomeItems.ForEach(Items.ShouldNotContain);
+        }
+
         public static void ShouldEndWith(this string Whole, string Suffix) {
             Whole.EndsWith(Suffix).ShouldBeTrue(
-               "\"" + Whole + "\" does not end with \"" + Suffix + "\"");
+               Whole.Quoted() + " does not end with " + Suffix.Quoted());
         }
         
         public static void ShouldBeGreaterThan(this int Higher, int Lower) {

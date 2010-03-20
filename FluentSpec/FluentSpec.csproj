@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Classes\MethodInfoExtensions.cs" />
     <Compile Include="Classes\Property.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="ShouldAssertions.cs" />
     <Compile Include="BehaviorExtensions.cs" />
     <Compile Include="Call.cs" />

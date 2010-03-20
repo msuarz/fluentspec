@@ -58,8 +58,25 @@ namespace Specs {
         [TestMethod]
         public void it_should_be_possible_to_check_for_emptiness() {
             
+            "".ShouldBeEmpty();
+            "42".ShouldNotBeEmpty();
+
             new List<int>().ShouldBeEmpty();
             new List<int>{42}.ShouldNotBeEmpty();
+        }
+
+        [TestMethod]
+        public void it_should_be_possible_to_search() {
+            
+            "142".ShouldContain("42");
+            "42".ShouldNotContain("0");
+
+            var List = new List<int>{0, 42, 84};
+            
+            List.ShouldContain(42);
+            List.ShouldContain(new List<int>{42, 0});
+            List.ShouldNotContain(1);
+            List.ShouldNotContain(new List<int>{1, 2});
         }
     }
 }
