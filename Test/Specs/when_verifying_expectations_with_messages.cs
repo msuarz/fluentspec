@@ -8,6 +8,19 @@ namespace Specs {
     public class when_verifying_expectations_with_messages {
     
         [TestMethod]
+        public void it_should_be_possible_to_compare_values() {
+
+            ShouldFailWithMessage(
+                () => 42.ShouldBe(0, "everything"), 
+                "everything"
+            );
+            ShouldFailWithMessage(
+                () => 42.ShouldNotBe(42, "everything"), 
+                "everything"
+            );
+        }
+    
+        [TestMethod]
         public void it_should_be_possible_to_check_bools() {
         
             ShouldFailWithMessage(

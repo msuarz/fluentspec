@@ -18,8 +18,16 @@ namespace FluentSpec {
             Assert.AreEqual(Expected, Actual);
         }
         
+        public static void ShouldBe(this object Actual, object Expected, string Message) {
+            Assert.AreEqual(Expected, Actual, Message);
+        }
+        
         public static void ShouldNotBe(this object Actual, object NotExpected) {
             Assert.AreNotEqual(NotExpected, Actual);
+        }
+        
+        public static void ShouldNotBe(this object Actual, object NotExpected, string Message) {
+            Assert.AreNotEqual(NotExpected, Actual, Message);
         }
         
         public static void ShouldBeNull(this object Actual) {
@@ -91,9 +99,17 @@ namespace FluentSpec {
         }
         
         public static void ShouldBeEmpty<T>(this List<T> List) {
-            Assert.IsTrue(List.Count == 0, "List have " + List.Count + " item(s)");
+            List.Count.ShouldBe(0, "List contains " + List.Count + " item(s)");
         }
 
+        public static void ShouldNotBeEmpty<T>(this List<T> List) {
+            (List.Count > 0).ShouldBeTrue("Unexpected empty List");
+        }
+
+        public static void ShouldNotBeEmpty(this string String) {
+            Assert.IsFalse(String.IsNullOrEmpty(String), "'" + String + "' is not empty");
+        }
+        
         public static void ShouldContain<T>(this List<T> List, T Item) {
             Assert.IsTrue(List.Contains(Item), "List does not have " + Item);
         }
@@ -101,10 +117,6 @@ namespace FluentSpec {
         public static void ShouldEndWith(this string Whole, string Suffix) {
             Whole.EndsWith(Suffix).ShouldBeTrue(
                "\"" + Whole + "\" does not end with \"" + Suffix + "\"");
-        }
-        
-        public static void ShouldNotBeEmpty(this string String) {
-            Assert.IsTrue(String.IsNullOrEmpty(String), "'" + String + "' is not empty");
         }
         
         public static void ShouldBeGreaterThan(this int Higher, int Lower) {

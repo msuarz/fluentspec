@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -52,6 +53,13 @@ namespace Specs {
         public void it_should_be_possible_to_induce_failure() {
             
             this.ShouldFail(() => this.ShouldHaveFailed());
+        }
+
+        [TestMethod]
+        public void it_should_be_possible_to_check_for_emptiness() {
+            
+            new List<int>().ShouldBeEmpty();
+            new List<int>{42}.ShouldNotBeEmpty();
         }
     }
 }
