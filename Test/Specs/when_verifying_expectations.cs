@@ -85,5 +85,12 @@ namespace Specs {
             "Hello Goodbye".ShouldStartWith("Hello");
             "Hello Goodbye".ShouldEndWith("Goodbye");
         }
+
+        [TestMethod]
+        public void it_should_be_possible_to_compare() {
+            
+            2.ShouldBeGreaterThan(1);
+            1.ShouldBeLessThan(2);
+        }
     }
 }

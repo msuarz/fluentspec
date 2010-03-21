@@ -155,9 +155,17 @@ namespace FluentSpec {
             Whole.EndsWith(Suffix).ShouldBeTrue(
                Whole.Quoted() + " does not end with " + Suffix.Quoted());
         }
-        
-        public static void ShouldBeGreaterThan(this int Higher, int Lower) {
-            Assert.IsTrue(Higher > Lower, Higher + " is < than " + Lower);
+
+        public static void ShouldBeGreaterThan(this int Bigger, int Smaller) {
+            
+            (Bigger.CompareTo(Smaller) > 0).ShouldBeTrue(
+                Bigger + " is not greater than " + Smaller);            
+        }
+
+        public static void ShouldBeLessThan(this IComparable Smaller, IComparable Bigger) {
+            
+            (Smaller.CompareTo(Bigger) < 0).ShouldBeTrue(
+                Smaller + " is not less than " + Bigger);            
         }
     }
 }
