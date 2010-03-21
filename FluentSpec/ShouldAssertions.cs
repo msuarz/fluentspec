@@ -146,6 +146,11 @@ namespace FluentSpec {
             SomeItems.ForEach(Items.ShouldNotContain);
         }
 
+        public static void ShouldStartWith(this string Whole, string Prefix) {
+            Whole.StartsWith(Prefix).ShouldBeTrue(
+               Whole.Quoted() + " does not start with " + Prefix.Quoted());
+        }
+
         public static void ShouldEndWith(this string Whole, string Suffix) {
             Whole.EndsWith(Suffix).ShouldBeTrue(
                Whole.Quoted() + " does not end with " + Suffix.Quoted());

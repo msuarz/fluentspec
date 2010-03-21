@@ -39,7 +39,7 @@ namespace Specs {
         }
 
         [TestMethod]
-        public void it_should_be_possible_to_check_bools() {
+        public void it_should_be_possible_to_check_facts() {
             
             true.ShouldBeTrue();
             false.ShouldBeFalse();
@@ -56,7 +56,7 @@ namespace Specs {
         }
 
         [TestMethod]
-        public void it_should_be_possible_to_check_for_emptiness() {
+        public void it_should_be_possible_to_detect_emptiness() {
             
             "".ShouldBeEmpty();
             "42".ShouldNotBeEmpty();
@@ -77,6 +77,13 @@ namespace Specs {
             List.ShouldContain(new List<int>{42, 0});
             List.ShouldNotContain(1);
             List.ShouldNotContain(new List<int>{1, 2});
+        }
+        
+        [TestMethod]
+        public void it_should_be_possible_to_check_prefix_and_suffix() {
+            
+            "Hello Goodbye".ShouldStartWith("Hello");
+            "Hello Goodbye".ShouldEndWith("Goodbye");
         }
     }
 }

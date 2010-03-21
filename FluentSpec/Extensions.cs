@@ -1,8 +1,8 @@
 namespace FluentSpec {
 
-    public static class Extensions {
+    internal static class Extensions {
         
-        public static string Quoted(this string Unquoted) {
+        internal static string Quoted(this string Unquoted) {
             return "\"" + Unquoted + "\"";
         }
     }
