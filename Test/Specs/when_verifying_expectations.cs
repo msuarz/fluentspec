@@ -11,8 +11,9 @@ namespace Specs {
         [TestMethod]
         public void it_should_be_possible_to_compare_types() {
 
-            "string".ShouldBeOfType(typeof (string));
-            "string".ShouldNotBeOfType(typeof (int));
+            "anything".ShouldBeA<object>();
+            "string".ShouldBeA<string>();
+            "42".ShouldNotBeA<int>();
         }
 
         [TestMethod]
@@ -20,6 +21,8 @@ namespace Specs {
 
             42.ShouldBe(42);
             "hello".ShouldNotBe("good bye");
+            new List<int> {1, 2}.ShouldBe(new List<int> {1, 2});
+            new List<string> {"a", "b"}.ShouldNotBe(new List<string> {"a", "c"});
         }
 
         [TestMethod]

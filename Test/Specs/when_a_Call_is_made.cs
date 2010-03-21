@@ -12,14 +12,14 @@ namespace Specs {
         public void it_should_be_created_as_a_Method() {
             
             ObjectFactory.Call(Actors.Method, null)
-                .ShouldBeOfType(typeof(Method));
+                .ShouldBeA<Method>();
         }
 
         [TestMethod]        
         public void it_should_be_created_as_a_Property() {
             
             ObjectFactory.Call(Actors.VirtualGetter, null)
-                .ShouldBeOfType(typeof(Property));
+                .ShouldBeA<Property>();
         }
 
         [TestMethod]

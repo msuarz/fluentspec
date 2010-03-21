@@ -5,15 +5,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FluentSpec {
 
     public static class ShouldAssertions {
-    
-        public static void ShouldBeOfType(this object Actual, Type ExpectedType) {
-            Actual.GetType().ShouldBe(ExpectedType);
+      
+        public static void ShouldBeA<T>(this Object Obj) {
+            
+            (Obj is T).ShouldBeTrue(
+                Obj.GetType().Name.Quoted() + " is not of type " + typeof(T).Name.Quoted());            
         }
         
-        public static void ShouldNotBeOfType(this object Actual, Type NotExpectedType) {
-            Actual.GetType().ShouldNotBe(NotExpectedType);
+        public static void ShouldNotBeA<T>(this Object Obj) {
+            
+            (Obj is T).ShouldBeFalse(
+                "Unexpected type of " + typeof(T).Name.Quoted());
         }
-        
+
         public static void ShouldBe(this object Actual, object Expected) {
             Assert.AreEqual(Expected, Actual);
         }
@@ -22,6 +26,14 @@ namespace FluentSpec {
             Assert.AreEqual(Expected, Actual, Message);
         }
         
+        public static void ShouldBe<T>(this List<T> Ones, List<T> Others) {
+            
+            Ones.Count.ShouldBe(Others.Count);
+            
+            for (var i = 0; i < Ones.Count; i++)
+                Ones[i].ShouldBe(Others[i]);
+        }
+
         public static void ShouldNotBe(this object Actual, object NotExpected) {
             Assert.AreNotEqual(NotExpected, Actual);
         }
@@ -30,6 +42,16 @@ namespace FluentSpec {
             Assert.AreNotEqual(NotExpected, Actual, Message);
         }
         
+        public static void ShouldNotBe<T>(this List<T> Ones, List<T> Others) {
+                            
+            if (Ones.Count != Others.Count) return;
+            
+            for (var i = 0; i < Ones.Count; i++)
+                if (!Ones[i].Equals(Others[i])) return;
+            
+            Ones.ShouldHaveFailed("Unexpected lists with same elements");
+        }
+
         public static void ShouldBeNull(this object Actual) {
             Actual.ShouldBe(null);
         }
