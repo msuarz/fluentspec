@@ -89,7 +89,7 @@ namespace Unit.Silverlight.TestObjectInterceptorBehavior {
         [TestMethod]
         public void When_ProcessTestClassInvocation_Should_Setup_Invocation_ReturnValue_With_Proxy() {
 
-            Given.Invocation.ReturnValue.WillReturn(Expected.Processor);
+            Given.Invoke.Is(Expected.Processor);
             Given.Invocation.Proxy.WillReturn(ExpectedReturnValue);
             
             When.ProcessTestClassInvocation();

@@ -4,13 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Unit.Silverlight.CallBehavior {
     [TestClass]
-    public class Given_Call : BehaviorOf<CallClass> {
+    public class Given_Call : BehaviorOf<Method> {
 
         #region stunts
 
         const string Method = "Method";
         const string AnotherMethod = "AnotherMethod";
-        CallClass Another;
+        Method Another;
         readonly object ExpectedResult = new object();
         readonly object[] Args = new object[0];
         readonly object[] AnotherArgs = new object[0];
@@ -19,13 +19,13 @@ namespace Unit.Silverlight.CallBehavior {
         #region givens
 
         private void GivenSameMethods() {
-            Given.Method = Method;
-            Another.Method = Method;
+            Given.Name = Method;
+            Another.Name = Method;
         }
 
         private void GivenDifferentMethods() {
-            Given.Method = Method;
-            Another.Method = AnotherMethod;
+            Given.Name = Method;
+            Another.Name = AnotherMethod;
         }
 
         private void GivenSameArgs() {
@@ -43,7 +43,7 @@ namespace Unit.Silverlight.CallBehavior {
         [TestInitialize]
         public override void Setup() {
             base.Setup();
-            Another = TestObjectFor<CallClass>();
+            Another = TestObjectFor<Method>();
         }
         
         [TestMethod]
@@ -145,7 +145,7 @@ namespace Unit.Silverlight.CallBehavior {
         [TestMethod]
         public void When_GetHashCode_Should_Equal_If_Properties_Are_Null() {
 
-            Given.Method = Another.Method = null;
+            Given.Name = Another.Name = null;
             Given.Args = Another.Args = null;
 
             Assert.IsTrue(That.GetHashCode() == Another.GetHashCode());
@@ -168,15 +168,5 @@ namespace Unit.Silverlight.CallBehavior {
 
             Assert.IsTrue(That.GetHashCode() != Another.GetHashCode());
         }
-        
-        [TestMethod]
-        public void When_WillBeExpected_Should_SwitchToGetter_If_IsSetter() {
-            
-            Given.IsSetter.WillReturn(true);
-            When.WillBeExpected();
-            Should.SwitchToGetter();
-        }
-        
-        
     }
 }

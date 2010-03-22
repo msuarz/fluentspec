@@ -7,6 +7,9 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
     [TestClass]
     public class Given_ClassInterceptor : BehaviorOf<ClassInterceptor> {
         
+        [TestInitialize]
+        public override void Setup() { base.Setup(); }
+        
         [TestMethod]
         public void When_ShouldInvokeBase() {
             

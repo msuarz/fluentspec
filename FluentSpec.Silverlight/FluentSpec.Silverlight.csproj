@@ -40,13 +40,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core-Silverlight, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Castle.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Castle.Core-Silverlight.dll</HintPath>
+      <HintPath>..\lib\silverlight\Castle.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.DynamicProxy-Silverlight, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+    <Reference Include="Castle.DynamicProxy2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Castle.DynamicProxy-Silverlight.dll</HintPath>
+      <HintPath>..\lib\silverlight\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight, Version=2.0.21024.1838, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\silverlight\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows" />
     <Reference Include="mscorlib" />
@@ -69,9 +73,6 @@
     <Compile Include="..\FluentSpec\CallBuilder.cs">
       <Link>CallBuilder.cs</Link>
     </Compile>
-    <Compile Include="..\FluentSpec\Classes\CallClass.cs">
-      <Link>Classes\CallClass.cs</Link>
-    </Compile>
     <Compile Include="..\FluentSpec\Classes\ClassInterceptor.cs">
       <Link>Classes\ClassInterceptor.cs</Link>
     </Compile>
@@ -84,6 +85,15 @@
     <Compile Include="..\FluentSpec\Classes\LogClass.cs">
       <Link>Classes\LogClass.cs</Link>
     </Compile>
+    <Compile Include="..\FluentSpec\Classes\Method.cs">
+      <Link>Classes\Method.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentSpec\Classes\MethodInfoExtensions.cs">
+      <Link>Classes\MethodInfoExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentSpec\Classes\Property.cs">
+      <Link>Classes\Property.cs</Link>
+    </Compile>
     <Compile Include="..\FluentSpec\Classes\TestObjectFactory.cs">
       <Link>Classes\TestObjectFactory.cs</Link>
     </Compile>
@@ -95,6 +105,9 @@
     </Compile>
     <Compile Include="..\FluentSpec\Create.cs">
       <Link>Create.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentSpec\Extensions.cs">
+      <Link>Extensions.cs</Link>
     </Compile>
     <Compile Include="..\FluentSpec\Given.cs">
       <Link>Given.cs</Link>
@@ -115,6 +128,7 @@
       <Link>Then.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShouldAssertions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fluentspec.snk" />
