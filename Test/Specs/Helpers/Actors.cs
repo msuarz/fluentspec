@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 
 namespace Specs.Helpers {
@@ -15,6 +14,10 @@ namespace Specs.Helpers {
 
         public static MethodInfo Method { get { return
             typeof(Class).GetMethod("Method")
+        ;}}
+
+        public static PropertyInfo Property { get { return
+            typeof(Class).GetProperty("VirtualProperty")
         ;}}
     }
 }

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{682EC5C9-DACE-4877-9F73-38023F9E2425}"
 	ProjectSection(SolutionItems) = preProject
 		FluentSpec.vsmdi = FluentSpec.vsmdi
@@ -8,9 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LocalTestRunWithTestCoverage.testrunconfig = LocalTestRunWithTestCoverage.testrunconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{92F5F7C1-84EB-4E53-9BAC-1A34BF002680}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSpec", "FluentSpec\FluentSpec.csproj", "{4235DF77-AC2E-4F84-9B41-C47C01098DC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{92F5F7C1-84EB-4E53-9BAC-1A34BF002680}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceptance", "Test\Acceptance\Acceptance.csproj", "{C1268AD3-1C4A-4237-AC32-AB02752A905F}"
 EndProject

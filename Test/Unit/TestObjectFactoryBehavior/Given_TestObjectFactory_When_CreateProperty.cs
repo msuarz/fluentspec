@@ -1,13 +1,14 @@
 using System.Reflection;
 using FluentSpec.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Specs.Helpers;
 
 namespace FluentSpec.Test.Unit.TestObjectFactoryBehavior {
 
     [TestClass]
     public class Given_TestObjectFactory_When_CreateProperty : BehaviorOf<TestObjectFactory> {
 
-        private readonly PropertyInfo ExpectedProperty = TestObjectFor<PropertyInfo>();
+        private readonly PropertyInfo ExpectedProperty = Actors.Property;
 
         [TestMethod]
         public void Should_Setup_Property() {
