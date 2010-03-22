@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1268AD3-1C4A-4237-AC32-AB02752A905F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentSpec.Test.Acceptance</RootNamespace>
+    <AssemblyName>FluentSpec.Test.Acceptance</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="fit, Version=1.8.3183.38421, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FitNesse\dotnet\fit.dll</HintPath>
+    </Reference>
+    <Reference Include="FitLibrary, Version=1.4.3183.38422, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FitNesse\dotnet\FitLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Unit\Helper.cs">
+      <Link>Helper.cs</Link>
+    </Compile>
+    <Compile Include="..\Unit\IInterface.cs">
+      <Link>IInterface.cs</Link>
+    </Compile>
+    <Compile Include="Classes\Dependency.cs" />
+    <Compile Include="Classes\Class.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_inject_dependencies.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_setup_exceptions_on_dependency_calls.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_setup_exceptions_within_the_class.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_setup_return_values_on_dependency_calls.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_use_args.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_verify_calls_made_in_a_virtual_method.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_verify_calls_within_the_class.cs" />
+    <Compile Include="Classic\WithExtensions\How_to_verify_dependency_calls.cs" />
+    <Compile Include="Classic\WithStatics\How_to_inject_dependencies.cs" />
+    <Compile Include="Classic\WithStatics\How_to_setup_exceptions_on_dependency_calls.cs" />
+    <Compile Include="Classic\WithStatics\How_to_setup_exceptions_within_the_class.cs" />
+    <Compile Include="Classic\WithStatics\How_to_setup_return_values_on_dependency_calls.cs" />
+    <Compile Include="Classic\WithStatics\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Classic\WithStatics\How_to_use_args.cs" />
+    <Compile Include="Classic\WithStatics\How_to_verify_calls_made_in_a_virtual_method.cs" />
+    <Compile Include="Classic\WithStatics\How_to_verify_calls_within_the_class.cs" />
+    <Compile Include="Classic\WithStatics\How_to_verify_dependency_calls.cs" />
+    <Compile Include="EdgeCases\What_if_a_dependency_has_a_dependency.cs" />
+    <Compile Include="EdgeCases\What_if_the_SUT_is_an_interface.cs" />
+    <Compile Include="Fluent\How_to_inject_dependencies.cs" />
+    <Compile Include="Fluent\How_to_use_args.cs" />
+    <Compile Include="Fluent\How_to_use_Properties.cs" />
+    <Compile Include="Fluent\How_to_verify_dependency_calls.cs" />
+    <Compile Include="Fluent\How_to_setup_exceptions_on_dependency_calls.cs" />
+    <Compile Include="Fluent\How_to_setup_return_values_on_dependency_calls.cs" />
+    <Compile Include="Fluent\How_to_setup_exceptions_within_the_class.cs" />
+    <Compile Include="Fluent\How_to_verify_calls_within_the_class.cs" />
+    <Compile Include="Fluent\How_to_verify_calls_made_in_a_virtual_method.cs" />
+    <Compile Include="Fluent\How_to_setup_return_values_within_the_class.cs" />
+    <Compile Include="Natural\Verified.cs" />
+    <Compile Include="Natural\HowToSetUpReturnValuesWithinTheClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FluentSpec\FluentSpec.csproj">
+      <Project>{4235DF77-AC2E-4F84-9B41-C47C01098DC0}</Project>
+      <Name>FluentSpec</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

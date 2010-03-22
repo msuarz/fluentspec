@@ -3,24 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{682EC5C9-DACE-4877-9F73-38023F9E2425}"
 	ProjectSection(SolutionItems) = preProject
-		FluentSpec.vsmdi = FluentSpec.vsmdi
-		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-		LocalTestRunWithTestCoverage.testrunconfig = LocalTestRunWithTestCoverage.testrunconfig
+		FluentSpec08.vsmdi = FluentSpec08.vsmdi
+		LocalTestRun08.testrunconfig = LocalTestRun08.testrunconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSpec", "FluentSpec\FluentSpec.csproj", "{4235DF77-AC2E-4F84-9B41-C47C01098DC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentSpec08", "FluentSpec\FluentSpec08.csproj", "{4235DF77-AC2E-4F84-9B41-C47C01098DC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{92F5F7C1-84EB-4E53-9BAC-1A34BF002680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceptance", "Test\Acceptance\Acceptance.csproj", "{C1268AD3-1C4A-4237-AC32-AB02752A905F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acceptance08", "Test\Acceptance\Acceptance08.csproj", "{C1268AD3-1C4A-4237-AC32-AB02752A905F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit", "Test\Unit\Unit.csproj", "{90050499-8EE7-4AF2-B18A-59738E6ECF13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit08", "Test\Unit\Unit08.csproj", "{90050499-8EE7-4AF2-B18A-59738E6ECF13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specs", "Test\Specs\Specs.csproj", "{A0003744-F8DE-433A-8857-E6BDEB4978EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specs08", "Test\Specs\Specs08.csproj", "{A0003744-F8DE-433A-8857-E6BDEB4978EB}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = FluentSpec.vsmdi
+		CategoryFile = FluentSpec08.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
