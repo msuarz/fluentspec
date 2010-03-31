@@ -1,5 +1,4 @@
 using System;
-using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FluentSpec.Specs {
@@ -26,36 +25,40 @@ namespace FluentSpec.Specs {
             Should.CallMethodFromExtension();
         }
     }
-    
+
+    #region context
+
     public class InterceptingMethodCallsBase {
-        
+
         protected virtual void BaseMethod() { throw new Exception(); }
     }
-    
+
     public class InterceptingMethodCalls : InterceptingMethodCallsBase {
 
         public void ThrowExceptionInProtectedMethod() {
             Method();
             BaseMethod();
         }
-        
+
         protected virtual void Method() { throw new Exception(); }
-        
+
         public void UsesExtensions() { this.ExtensionMethod(); }
-        
+
         public virtual void CallMethodFromExtension() { throw new Exception(); }
 
         public void AttemptToThrowExceptionFromInternalMethod() {
             ThrowExceptionFromInternalMethod();
         }
 
-        virtual protected internal void ThrowExceptionFromInternalMethod() { throw new Exception(); }
+        virtual internal protected void ThrowExceptionFromInternalMethod() { throw new Exception(); }
     }
-    
+
     public static class InterceptingMethodCallsExtensions {
-        
+
         public static void ExtensionMethod(this InterceptingMethodCalls Class) {
             Class.CallMethodFromExtension();
         }
     }
+
+    #endregion
 }
