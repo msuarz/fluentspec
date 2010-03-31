@@ -1,6 +1,6 @@
 using System;
 
-namespace Specs.Helpers {
+namespace FluentSpec.Specs.Helpers {
 
     public class Class {
     

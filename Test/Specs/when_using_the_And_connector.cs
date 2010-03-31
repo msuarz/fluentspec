@@ -1,8 +1,7 @@
 using System;
-using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     [TestClass]
     public class when_using_the_And_connector : BehaviorOf<AndSUT>{

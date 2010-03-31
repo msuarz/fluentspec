@@ -1,9 +1,8 @@
-using FluentSpec;
 using FluentSpec.Classes;
+using FluentSpec.Specs.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Specs.Helpers;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     [TestClass]
     public class when_a_Call_is_made {

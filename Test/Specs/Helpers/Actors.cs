@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Specs.Helpers {
+namespace FluentSpec.Specs.Helpers {
 
     public class Actors {
 

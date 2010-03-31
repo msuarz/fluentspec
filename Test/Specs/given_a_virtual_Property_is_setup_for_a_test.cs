@@ -1,8 +1,7 @@
-using FluentSpec;
 using FluentSpec.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     public class given_a_virtual_Property_is_setup_for_a_test {
     

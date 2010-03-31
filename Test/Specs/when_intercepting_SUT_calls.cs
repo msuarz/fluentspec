@@ -2,7 +2,7 @@ using System;
 using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     [TestClass]
     public class when_intercepting_SUT_calls : BehaviorOf<InterceptingMethodCalls>{
@@ -11,6 +11,12 @@ namespace Specs {
         public void should_not_intercept_protected_methods() {
 
             this.ShouldFail(When.ThrowExceptionInProtectedMethod);
+        }
+        
+        [TestMethod]
+        public void should_intercept_internal_methods() {
+
+            this.ShouldNotFail(When.AttemptToThrowExceptionFromInternalMethod);
         }
         
         [TestMethod]
@@ -38,6 +44,12 @@ namespace Specs {
         public void UsesExtensions() { this.ExtensionMethod(); }
         
         public virtual void CallMethodFromExtension() { throw new Exception(); }
+
+        public void AttemptToThrowExceptionFromInternalMethod() {
+            ThrowExceptionFromInternalMethod();
+        }
+
+        virtual protected internal void ThrowExceptionFromInternalMethod() { throw new Exception(); }
     }
     
     public static class InterceptingMethodCallsExtensions {

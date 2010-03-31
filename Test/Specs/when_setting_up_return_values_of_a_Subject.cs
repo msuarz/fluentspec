@@ -1,8 +1,7 @@
-using FluentSpec;
+using FluentSpec.Specs.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Specs.Helpers;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     [TestClass]
     public class when_setting_up_return_values_of_a_Subject : BehaviorOf<Class> {

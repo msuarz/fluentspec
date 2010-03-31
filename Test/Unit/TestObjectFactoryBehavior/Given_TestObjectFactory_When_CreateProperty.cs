@@ -1,7 +1,7 @@
 using System.Reflection;
 using FluentSpec.Classes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Specs.Helpers;
+using FluentSpec.Specs.Helpers;
 
 namespace FluentSpec.Test.Unit.TestObjectFactoryBehavior {
 

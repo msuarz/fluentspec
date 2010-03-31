@@ -1,9 +1,8 @@
-using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentSpec.Classes;
 using System;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     public class given_a_Call_is_setup_to_throw_an_exception : BehaviorOf<Method> {
 

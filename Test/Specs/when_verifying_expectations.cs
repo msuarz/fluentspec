@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using FluentSpec;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Specs {
+namespace FluentSpec.Specs {
 
     [TestClass]
     public class when_verifying_expectations {
