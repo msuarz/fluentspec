@@ -59,6 +59,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\test\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -71,6 +75,8 @@
     <Compile Include="Helpers\Class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="given_a_virtual_Property_is_set_during_a_test.cs" />
+    <Compile Include="what_I_cant_Rhino_cant_either.cs" />
+    <Compile Include="when_Automocking_dependencies.cs" />
     <Compile Include="when_a_Call_is_made.cs" />
     <Compile Include="when_intercepting_SUT_calls.cs" />
     <Compile Include="when_setting_up_return_values_of_a_Subject.cs" />
