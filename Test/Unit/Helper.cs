@@ -30,13 +30,13 @@ namespace FluentSpec.Test.Unit {
         
         public IInterface AutoProperty { get; set; }
         
-        public static PropertyInfo TesteableProperty { get { return
+        public static PropertyInfo TestableProperty { get { return
             typeof(Helper).GetProperty("AutoProperty")
         ;}}
 
         public IInterface ReadOnlyProperty { get { return null; } }
         
-        public static PropertyInfo NonTesteableProperty { get { return
+        public static PropertyInfo NonTestableProperty { get { return
             typeof(Helper).GetProperty("ReadOnlyProperty")
         ;}}
 

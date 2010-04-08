@@ -10,9 +10,9 @@ namespace FluentSpec.Classes {
         public Type Type;
         public object Object;
         public TestProcessor Processor;
-        private object[] Args;
+        object[] Args;
 
-        private readonly Type[] Types = new[] { typeof(TestProcessor) };
+        readonly Type[] Types = new[] { typeof(TestProcessor) };
 
         public SubjectClass TestObjectFor<SubjectClass>(params object[] Args) {
             this.Args = Args;
@@ -44,17 +44,20 @@ namespace FluentSpec.Classes {
             ObjectFactory.TestProcessor
         ;}}
 
-        private TestObjectInterceptor ClassInterceptor { get { return 
+        TestObjectInterceptor ClassInterceptor { get { return 
             ObjectFactory.ClassInterceptor(Processor)
         ;}}
 
-        private TestObjectInterceptor InterfaceInterceptor { get { return
+        TestObjectInterceptor InterfaceInterceptor { get { return
             ObjectFactory.InterfaceInterceptor(Processor)
         ;}}
 
-        private List<PropertyInfo> Properties { get {
-            return new List<PropertyInfo>(Type.GetProperties())
-        ;}}
+        List<PropertyInfo> Properties { get { return new List<PropertyInfo>(
+            Type.GetProperties(
+                BindingFlags.Instance 
+                | BindingFlags.NonPublic
+                | BindingFlags.Public
+        ));}}
 
         public virtual void CreateDependencies() {
             Properties.ForEach(CreateProperty)
@@ -77,6 +80,7 @@ namespace FluentSpec.Classes {
             IsAbstractProperty
             && Property.CanWrite
             && Property.CanRead
+            && IsPublicOrInternalProperty
             && HasNotSetProperty
         ;}}
 
@@ -85,7 +89,12 @@ namespace FluentSpec.Classes {
             || Property.PropertyType.IsInterface
         ;}}
 
-        public virtual bool HasNotSetProperty { get { return
+        bool IsPublicOrInternalProperty { get { return
+            Property.GetGetMethod(true).IsPublic
+            || Property.GetGetMethod(true).IsAssembly
+        ;}}
+
+        bool HasNotSetProperty { get { return
             Property.GetValue(Object, null) == null
         ;}}
     }

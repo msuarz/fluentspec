@@ -50,7 +50,7 @@ namespace FluentSpec.Specs {
             ThrowExceptionFromInternalMethod();
         }
 
-        virtual internal protected void ThrowExceptionFromInternalMethod() { throw new Exception(); }
+        internal protected virtual void ThrowExceptionFromInternalMethod() { throw new Exception(); }
     }
 
     public static class InterceptingMethodCallsExtensions {

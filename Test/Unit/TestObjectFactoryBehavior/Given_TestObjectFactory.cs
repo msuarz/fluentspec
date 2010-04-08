@@ -9,17 +9,18 @@ namespace FluentSpec.Test.Unit.TestObjectFactoryBehavior {
         [TestMethod]
         public void When_ShouldTestProperty() {
 
-            Given.Property = Helper.TesteableProperty;
-            Given.HasNotSetProperty.Is(true);
+            Given.Object = new Helper();
+            And.Property = Helper.TestableProperty;
 
-            Assert.IsTrue(That.ShouldTestProperty);
+            When.ShouldTestProperty.ShouldBeTrue();
         }
 
         [TestMethod]
         public void When_ShouldNotTestProperty() {
         
-            Given.Property = Helper.NonTesteableProperty;
-            Assert.IsFalse(That.ShouldTestProperty);
+            Given.Property = Helper.NonTestableProperty;
+
+            When.ShouldTestProperty.ShouldBeFalse();
         }
     }
 }
