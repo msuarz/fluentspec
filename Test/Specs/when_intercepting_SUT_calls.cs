@@ -44,7 +44,7 @@ namespace FluentSpec.Specs {
 
         public void UsesExtensions() { this.ExtensionMethod(); }
 
-        public virtual void CallMethodFromExtension() { throw new Exception(); }
+        public virtual void CallMethodFromExtension() { throw new Exception("should have mocked method called from extension"); }
 
         public void AttemptToThrowExceptionFromInternalMethod() {
             ThrowExceptionFromInternalMethod();
