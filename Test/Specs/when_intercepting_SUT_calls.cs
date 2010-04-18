@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FluentSpec.Specs {
@@ -23,6 +24,17 @@ namespace FluentSpec.Specs {
             
             When.UsesExtensions();
             Should.CallMethodFromExtension();
+        }
+
+        [TestMethod]
+        public void should_intercept_calls_from_lambdas_in_test_code() {
+            var Tokens = new List<string> {"1", "2"};
+
+            When.Parse(Tokens);
+            Tokens.ForEach(Token => Should.Parse(Token));
+
+            // but fails like this :(
+            this.ShouldFail(() => Tokens.ForEach(Should.Parse));
         }
     }
 
@@ -51,6 +63,12 @@ namespace FluentSpec.Specs {
         }
 
         internal protected virtual void ThrowExceptionFromInternalMethod() { throw new Exception(); }
+        
+        public void Parse(List<string> Tokens) { Tokens.ForEach(Parse); }
+
+        public virtual void Parse(string Token) {
+            throw new Exception("should have mocked method called from extension");
+        }
     }
 
     public static class InterceptingMethodCallsExtensions {
