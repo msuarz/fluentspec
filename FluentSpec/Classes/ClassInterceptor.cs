@@ -24,13 +24,16 @@ namespace FluentSpec.Classes {
         public virtual bool IsProtectedCall { get { return Invocation.Method.IsFamily; }}
 
         public virtual bool WasExternalCall { get { return 
-            !ExternalCallers.Any(Caller => 
+            ExternalCallers.Where(Caller => 
                 Caller.IsInstanceOfType(Invocation.InvocationTarget))
+                .Take(2).Count() != 2
         ;}}
 
         public virtual IEnumerable<Type> ExternalCallers { get {
+            const int InternalCallsCount = 7;
             var Stack = new StackTrace();
-            for (var i = 7; i < Stack.FrameCount; i++) 
+
+            for (var i = InternalCallsCount; i < Stack.FrameCount; i++) 
                 yield return Stack
                     .GetFrame(i)
                     .GetMethod()

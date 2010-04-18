@@ -39,7 +39,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\08\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -48,7 +48,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\08\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -96,10 +96,6 @@
     <Compile Include="TestProcessorBehavior\Given_TestProcessor_When_ThrowExceptionIfExpected.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FluentSpec\FluentSpec.csproj">
-      <Project>{4235DF77-AC2E-4F84-9B41-C47C01098DC0}</Project>
-      <Name>FluentSpec</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Specs\Specs.csproj">
       <Project>{A0003744-F8DE-433A-8857-E6BDEB4978EB}</Project>
       <Name>Specs</Name>

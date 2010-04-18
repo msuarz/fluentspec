@@ -13,10 +13,10 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
         [TestMethod]
         public void When_ShouldInvokeBase() {
             
-            Given.Processor.ExpectSubjectAction.WillReturn(true);
-            Given.WasExternalCall.WillReturn(true);
+            Given.Processor.ExpectSubjectAction.Is(true);
+            And.WasExternalCall.Is(true);
             
-            Assert.IsTrue(That.ShouldInvokeBase);
+            When.ShouldInvokeBase.ShouldBeTrue();
         }
         
         [TestMethod]
@@ -50,19 +50,19 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
         [TestMethod]
         public void When_WasExternalCall() {
             
-            Given.Invocation.InvocationTarget.WillReturn(InvocationTarget);
-            Given.ExternalCallers.WillReturn(new[]{ DifferentType });
+            Given.Invocation.InvocationTarget.Is(InvocationTarget);
+            And.ExternalCallers.Are(new[]{ DifferentType });
             
-            Assert.IsTrue(That.WasExternalCall);
+            When.WasExternalCall.ShouldBeTrue();
         }
         
         [TestMethod]
         public void When_WasInternalCall() {
 
-            Given.Invocation.InvocationTarget.WillReturn(InvocationTarget);
-            Given.ExternalCallers.WillReturn(new[]{ SameType });
+            Given.Invocation.InvocationTarget.Is(InvocationTarget);
+            And.ExternalCallers.Are(new[]{ SameType, SameType });
 
-            Assert.IsFalse(That.WasExternalCall);
+            When.WasExternalCall.ShouldBeFalse();
         }
     }
 }
