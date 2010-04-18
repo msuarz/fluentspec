@@ -51,7 +51,7 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
         public void When_WasExternalCall() {
             
             Given.Invocation.InvocationTarget.Is(InvocationTarget);
-            And.ExternalCallers.Are(new[]{ DifferentType });
+            And.Callers.Are(new[]{ DifferentType });
             
             When.WasExternalCall.ShouldBeTrue();
         }
@@ -60,7 +60,7 @@ namespace FluentSpec.Test.Unit.TestObjectInterceptorBehavior {
         public void When_WasInternalCall() {
 
             Given.Invocation.InvocationTarget.Is(InvocationTarget);
-            And.ExternalCallers.Are(new[]{ SameType, SameType });
+            And.Callers.Are(new[]{ SameType, SameType });
 
             When.WasExternalCall.ShouldBeFalse();
         }
