@@ -21,6 +21,8 @@ namespace FluentSpec.Specs {
 
     public class Automocking {
 
+        public interface Dependency {}
+
         internal Dependency InternalDependency { get; set; }
 
         protected Dependency protectedDependency { get; set; }
@@ -29,6 +31,4 @@ namespace FluentSpec.Specs {
         public Dependency ProtectedDependency() { return protectedDependency; }
         public Dependency PrivateDependency() { return privateDependency; }
     }
-
-    public interface Dependency {}
 }

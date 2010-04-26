@@ -77,6 +77,7 @@
     <Compile Include="what_I_cant_Rhino_cant_either.cs" />
     <Compile Include="when_Automocking_dependencies.cs" />
     <Compile Include="when_a_Call_is_made.cs" />
+    <Compile Include="when_Dependencies_are_instantiated_by_the_constructor.cs" />
     <Compile Include="when_intercepting_SUT_calls.cs" />
     <Compile Include="when_setting_up_return_values_of_a_Subject.cs" />
     <Compile Include="when_using_the_And_connector.cs" />
