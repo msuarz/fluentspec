@@ -4,9 +4,12 @@ namespace FluentSpec {
 
     public class BehaviorOf<SubjectClass> {
 
-        SubjectClass Subject = TestObjectFor<SubjectClass>();
+        protected SubjectClass Subject;
 
-        public BehaviorOf() { LastConnector = () => { return Subject; }; }
+        public BehaviorOf() {
+            try { Subject = TestObjectFor<SubjectClass>(); } catch {}
+            LastConnector = () => { return Subject; };
+        }
         
         public virtual void Setup() { Subject = TestObjectFor<SubjectClass>(); }
 
