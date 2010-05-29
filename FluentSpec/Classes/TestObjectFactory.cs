@@ -18,7 +18,7 @@ namespace FluentSpec.Classes {
             this.Args = Args;
              
             Type = typeof(SubjectClass);
-            Processor = TestProcessor;
+            Processor = NewTestProcessor;
             Object = TestObject;
 
             CreateDependencies();
@@ -40,7 +40,7 @@ namespace FluentSpec.Classes {
                 Type, Types, InterfaceInterceptor)
         ;}}
 
-        public virtual TestProcessor TestProcessor { get { return 
+        public virtual TestProcessor NewTestProcessor { get { return 
             ObjectFactory.TestProcessor
         ;}}
 

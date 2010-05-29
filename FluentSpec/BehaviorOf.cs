@@ -13,7 +13,7 @@ namespace FluentSpec {
         
         public virtual void Setup() { Subject = TestObjectFor<SubjectClass>(); }
 
-        private TestProcessor TestSubject { get { return (TestProcessor) Subject; } }
+        TestProcessor TestSubject { get { return (TestProcessor) Subject; }}
 
         protected static T TestObjectFor<T>(params object[] Args) { return 
             Create.TestObjectFor<T>(Args)

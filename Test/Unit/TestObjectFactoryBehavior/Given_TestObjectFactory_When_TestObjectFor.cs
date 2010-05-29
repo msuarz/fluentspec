@@ -15,7 +15,7 @@ namespace FluentSpec.Test.Unit.TestObjectFactoryBehavior {
         public void SetUp() {
             
             Given.TestObject.WillReturn(ExpectedTestObject);
-            Given.TestProcessor.WillReturn(ExpectedProcessor);
+            Given.NewTestProcessor.WillReturn(ExpectedProcessor);
 
             ActualTestObject = When.TestObjectFor<TestObjectFactory>();
         }

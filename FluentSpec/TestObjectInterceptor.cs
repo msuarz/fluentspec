@@ -23,7 +23,7 @@ namespace FluentSpec {
         ;}}
 
         public virtual bool ShouldReturn { get { return 
-            !Invocation.Method.ReturnType.Equals(typeof(void))
+            Invocation.Method.ReturnType != typeof(void)
         ;}}
 
         public virtual bool ShouldInvokeTestClass { get { return
@@ -31,10 +31,10 @@ namespace FluentSpec {
         ;}}
         
         public virtual bool IsTestProcessorInvocation { get { return
-            Invocation.Method.DeclaringType == typeof(TestProcessor)    
+            Invocation.Method.DeclaringType.Equals(typeof(TestProcessor))    
         ;}}
 
-        private readonly List<string> TestConnectors = new List<string> {
+        static readonly List<string> TestConnectors = new List<string> {
             "get_Given", "get_When", "get_Should", "get_ShouldNot", "IgnoreArgs"
         };
 
